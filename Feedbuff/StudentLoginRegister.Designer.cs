@@ -226,7 +226,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "StudentLoginRegister";
             this.Text = "Register";
-            this.Load += new System.EventHandler(this.StudentLoginRegister_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
