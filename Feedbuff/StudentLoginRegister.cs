@@ -10,11 +10,13 @@ using System.Windows.Forms;
 
 namespace Feedbuff
 {
-    public partial class Form1 : Form
+    public partial class StudentLoginRegister : Form
     {
-        public Form1()
+        public StudentLoginRegister()
         {
             InitializeComponent();
         }
+
+        
     }
 }
