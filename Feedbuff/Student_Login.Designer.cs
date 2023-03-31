@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.Loginbtn = new System.Windows.Forms.Button();
             this.RegisterButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -38,14 +38,15 @@
             this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button1
+            // Loginbtn
             // 
-            this.button1.Location = new System.Drawing.Point(298, 253);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(90, 36);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Login";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Loginbtn.Location = new System.Drawing.Point(298, 253);
+            this.Loginbtn.Name = "Loginbtn";
+            this.Loginbtn.Size = new System.Drawing.Size(90, 36);
+            this.Loginbtn.TabIndex = 0;
+            this.Loginbtn.Text = "Login";
+            this.Loginbtn.UseVisualStyleBackColor = true;
+            this.Loginbtn.Click += new System.EventHandler(this.Loginbtn_Click);
             // 
             // RegisterButton
             // 
@@ -87,9 +88,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(41, 16);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Email";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
+            this.label2.Text = "Email";     // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -107,7 +106,6 @@
             this.label4.Size = new System.Drawing.Size(174, 16);
             this.label4.TabIndex = 7;
             this.label4.Text = "Geen account? registreer nu";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // Student_Login
             // 
@@ -122,7 +120,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.RegisterButton);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Loginbtn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Student_Login";
             this.Text = "Student Login";
@@ -133,7 +131,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Loginbtn;
         private System.Windows.Forms.Button RegisterButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;

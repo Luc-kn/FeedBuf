@@ -16,5 +16,10 @@ namespace Feedbuff
         {
             InitializeComponent();
         }
+
+        private void Closebtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
