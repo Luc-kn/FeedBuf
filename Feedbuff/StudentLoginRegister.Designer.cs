@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.registerBtn = new System.Windows.Forms.Button();
-            this.loginBtn = new System.Windows.Forms.Button();
-            this.welkomTxtBx = new System.Windows.Forms.TextBox();
             this.firstNamTxtBx = new System.Windows.Forms.TextBox();
             this.infixTxtBx = new System.Windows.Forms.TextBox();
             this.lastnameTxtBx = new System.Windows.Forms.TextBox();
@@ -47,35 +44,9 @@
             this.tosCB = new System.Windows.Forms.CheckBox();
             this.confirmPasswordLbl = new System.Windows.Forms.Label();
             this.confirmPasswordTxtBx = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // registerBtn
-            // 
-            this.registerBtn.Location = new System.Drawing.Point(217, 95);
-            this.registerBtn.Name = "registerBtn";
-            this.registerBtn.Size = new System.Drawing.Size(130, 27);
-            this.registerBtn.TabIndex = 0;
-            this.registerBtn.Text = "Aanmelden";
-            this.registerBtn.UseVisualStyleBackColor = true;
-            // 
-            // loginBtn
-            // 
-            this.loginBtn.Location = new System.Drawing.Point(412, 95);
-            this.loginBtn.Name = "loginBtn";
-            this.loginBtn.Size = new System.Drawing.Size(130, 27);
-            this.loginBtn.TabIndex = 1;
-            this.loginBtn.Text = "Inloggen";
-            this.loginBtn.UseVisualStyleBackColor = true;
-            // 
-            // welkomTxtBx
-            // 
-            this.welkomTxtBx.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.welkomTxtBx.Location = new System.Drawing.Point(217, 12);
-            this.welkomTxtBx.Multiline = true;
-            this.welkomTxtBx.Name = "welkomTxtBx";
-            this.welkomTxtBx.Size = new System.Drawing.Size(325, 69);
-            this.welkomTxtBx.TabIndex = 2;
-            this.welkomTxtBx.Text = "Hallo student kies uw optie en vul de juiste gegevens in.";
             // 
             // firstNamTxtBx
             // 
@@ -175,12 +146,13 @@
             // 
             // BackBtn
             // 
-            this.BackBtn.Location = new System.Drawing.Point(12, 411);
+            this.BackBtn.Location = new System.Drawing.Point(7, 363);
             this.BackBtn.Name = "BackBtn";
             this.BackBtn.Size = new System.Drawing.Size(130, 27);
             this.BackBtn.TabIndex = 15;
             this.BackBtn.Text = "Terug";
             this.BackBtn.UseVisualStyleBackColor = true;
+            this.BackBtn.Click += new System.EventHandler(this.BackBtn_Click);
             // 
             // tosCB
             // 
@@ -205,14 +177,36 @@
             // 
             this.confirmPasswordTxtBx.Location = new System.Drawing.Point(494, 276);
             this.confirmPasswordTxtBx.Name = "confirmPasswordTxtBx";
-            this.confirmPasswordTxtBx.Size = new System.Drawing.Size(160, 22);
+            this.confirmPasswordTxtBx.Size = new System.Drawing.Size(134, 22);
             this.confirmPasswordTxtBx.TabIndex = 17;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label1.Location = new System.Drawing.Point(12, 101);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(195, 20);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "Regristreer uw gegevens";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(144, 363);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(158, 27);
+            this.button1.TabIndex = 20;
+            this.button1.Text = "Bevestig gegevens";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // StudentLoginRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(660, 446);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.confirmPasswordLbl);
             this.Controls.Add(this.confirmPasswordTxtBx);
             this.Controls.Add(this.tosCB);
@@ -229,21 +223,15 @@
             this.Controls.Add(this.lastnameTxtBx);
             this.Controls.Add(this.infixTxtBx);
             this.Controls.Add(this.firstNamTxtBx);
-            this.Controls.Add(this.welkomTxtBx);
-            this.Controls.Add(this.loginBtn);
-            this.Controls.Add(this.registerBtn);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "StudentLoginRegister";
-            this.Text = "StudentLoginRegister";
+            this.Text = "Register";
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button registerBtn;
-        private System.Windows.Forms.Button loginBtn;
-        private System.Windows.Forms.TextBox welkomTxtBx;
         private System.Windows.Forms.TextBox firstNamTxtBx;
         private System.Windows.Forms.TextBox infixTxtBx;
         private System.Windows.Forms.TextBox lastnameTxtBx;
@@ -260,5 +248,7 @@
         private System.Windows.Forms.CheckBox tosCB;
         private System.Windows.Forms.Label confirmPasswordLbl;
         private System.Windows.Forms.TextBox confirmPasswordTxtBx;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
     }
 }
