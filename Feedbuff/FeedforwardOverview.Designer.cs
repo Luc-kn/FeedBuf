@@ -37,6 +37,7 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.feedForwadSaveBtn = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.ReturnBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -117,12 +118,22 @@
             this.listBox1.Size = new System.Drawing.Size(246, 308);
             this.listBox1.TabIndex = 8;
             // 
+            // ReturnBtn
+            // 
+            this.ReturnBtn.Location = new System.Drawing.Point(12, 409);
+            this.ReturnBtn.Name = "ReturnBtn";
+            this.ReturnBtn.Size = new System.Drawing.Size(121, 29);
+            this.ReturnBtn.TabIndex = 12;
+            this.ReturnBtn.Text = "terug";
+            this.ReturnBtn.UseVisualStyleBackColor = true;
+            // 
             // FeedforwardOverview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.ReturnBtn);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.feedForwadSaveBtn);
             this.Controls.Add(this.textBox3);
@@ -151,5 +162,6 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Button feedForwadSaveBtn;
         private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Button ReturnBtn;
     }
 }

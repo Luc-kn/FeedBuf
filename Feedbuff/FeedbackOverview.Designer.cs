@@ -35,7 +35,6 @@
             this.addDocumentTxtBx = new System.Windows.Forms.TextBox();
             this.addDocumentLbl = new System.Windows.Forms.Label();
             this.addFeedbackToDataBaseBtn = new System.Windows.Forms.Button();
-            this.addFeedbackToDataBaseLbl = new System.Windows.Forms.Label();
             this.addFeedbackPageNameLbl = new System.Windows.Forms.Label();
             this.feedbackFromDatabaseLstBx = new System.Windows.Forms.ListBox();
             this.ReturnBtn = new System.Windows.Forms.Button();
@@ -43,9 +42,9 @@
             // 
             // addFeedbackTxtBx
             // 
-            this.addFeedbackTxtBx.Location = new System.Drawing.Point(156, 70);
+            this.addFeedbackTxtBx.Location = new System.Drawing.Point(16, 91);
             this.addFeedbackTxtBx.Name = "addFeedbackTxtBx";
-            this.addFeedbackTxtBx.Size = new System.Drawing.Size(258, 22);
+            this.addFeedbackTxtBx.Size = new System.Drawing.Size(196, 22);
             this.addFeedbackTxtBx.TabIndex = 0;
             // 
             // addFeedbackLbl
@@ -60,7 +59,7 @@
             // asignSubject
             // 
             this.asignSubject.AutoSize = true;
-            this.asignSubject.Location = new System.Drawing.Point(12, 129);
+            this.asignSubject.Location = new System.Drawing.Point(15, 116);
             this.asignSubject.Name = "asignSubject";
             this.asignSubject.Size = new System.Drawing.Size(97, 16);
             this.asignSubject.TabIndex = 3;
@@ -68,14 +67,14 @@
             // 
             // addSubjectTxtBx
             // 
-            this.addSubjectTxtBx.Location = new System.Drawing.Point(115, 129);
+            this.addSubjectTxtBx.Location = new System.Drawing.Point(11, 182);
             this.addSubjectTxtBx.Name = "addSubjectTxtBx";
-            this.addSubjectTxtBx.Size = new System.Drawing.Size(299, 22);
+            this.addSubjectTxtBx.Size = new System.Drawing.Size(201, 22);
             this.addSubjectTxtBx.TabIndex = 4;
             // 
             // addDocumentTxtBx
             // 
-            this.addDocumentTxtBx.Location = new System.Drawing.Point(218, 98);
+            this.addDocumentTxtBx.Location = new System.Drawing.Point(16, 138);
             this.addDocumentTxtBx.Name = "addDocumentTxtBx";
             this.addDocumentTxtBx.Size = new System.Drawing.Size(196, 22);
             this.addDocumentTxtBx.TabIndex = 6;
@@ -83,7 +82,7 @@
             // addDocumentLbl
             // 
             this.addDocumentLbl.AutoSize = true;
-            this.addDocumentLbl.Location = new System.Drawing.Point(12, 101);
+            this.addDocumentLbl.Location = new System.Drawing.Point(12, 163);
             this.addDocumentLbl.Name = "addDocumentLbl";
             this.addDocumentLbl.Size = new System.Drawing.Size(200, 16);
             this.addDocumentLbl.TabIndex = 5;
@@ -91,21 +90,12 @@
             // 
             // addFeedbackToDataBaseBtn
             // 
-            this.addFeedbackToDataBaseBtn.Location = new System.Drawing.Point(139, 158);
+            this.addFeedbackToDataBaseBtn.Location = new System.Drawing.Point(11, 210);
             this.addFeedbackToDataBaseBtn.Name = "addFeedbackToDataBaseBtn";
             this.addFeedbackToDataBaseBtn.Size = new System.Drawing.Size(139, 23);
             this.addFeedbackToDataBaseBtn.TabIndex = 7;
             this.addFeedbackToDataBaseBtn.Text = "opslaan";
             this.addFeedbackToDataBaseBtn.UseVisualStyleBackColor = true;
-            // 
-            // addFeedbackToDataBaseLbl
-            // 
-            this.addFeedbackToDataBaseLbl.AutoSize = true;
-            this.addFeedbackToDataBaseLbl.Location = new System.Drawing.Point(12, 161);
-            this.addFeedbackToDataBaseLbl.Name = "addFeedbackToDataBaseLbl";
-            this.addFeedbackToDataBaseLbl.Size = new System.Drawing.Size(121, 16);
-            this.addFeedbackToDataBaseLbl.TabIndex = 8;
-            this.addFeedbackToDataBaseLbl.Text = "Feedback opslaan";
             // 
             // addFeedbackPageNameLbl
             // 
@@ -145,7 +135,6 @@
             this.Controls.Add(this.ReturnBtn);
             this.Controls.Add(this.feedbackFromDatabaseLstBx);
             this.Controls.Add(this.addFeedbackPageNameLbl);
-            this.Controls.Add(this.addFeedbackToDataBaseLbl);
             this.Controls.Add(this.addFeedbackToDataBaseBtn);
             this.Controls.Add(this.addDocumentTxtBx);
             this.Controls.Add(this.addDocumentLbl);
@@ -170,7 +159,6 @@
         private System.Windows.Forms.TextBox addDocumentTxtBx;
         private System.Windows.Forms.Label addDocumentLbl;
         private System.Windows.Forms.Button addFeedbackToDataBaseBtn;
-        private System.Windows.Forms.Label addFeedbackToDataBaseLbl;
         private System.Windows.Forms.Label addFeedbackPageNameLbl;
         private System.Windows.Forms.ListBox feedbackFromDatabaseLstBx;
         private System.Windows.Forms.Button ReturnBtn;
