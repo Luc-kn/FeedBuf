@@ -15,7 +15,7 @@ namespace Feedbuff
         public FeedbackOverview() { 
             InitializeComponent();
             Feedback DummyFeedback = new Feedback(1, DateTime.Now, "a", "a", "a", "A", true);
-            feedbackFromDatabaseLstBx.Items.Add(DummyFeedback.Read()[0].GivenFeedback);
+           // feedbackFromDatabaseLstBx.Items.Add(DummyFeedback.Read()[0].GivenFeedback);
 
         }
 

@@ -123,12 +123,12 @@
             this.feedbackFromDatabaseLstBx.ItemHeight = 16;
             this.feedbackFromDatabaseLstBx.Location = new System.Drawing.Point(442, 74);
             this.feedbackFromDatabaseLstBx.Name = "feedbackFromDatabaseLstBx";
-            this.feedbackFromDatabaseLstBx.Size = new System.Drawing.Size(1412, 884);
+            this.feedbackFromDatabaseLstBx.Size = new System.Drawing.Size(1066, 756);
             this.feedbackFromDatabaseLstBx.TabIndex = 10;
             // 
             // ReturnBtn
             // 
-            this.ReturnBtn.Location = new System.Drawing.Point(12, 830);
+            this.ReturnBtn.Location = new System.Drawing.Point(12, 801);
             this.ReturnBtn.Name = "ReturnBtn";
             this.ReturnBtn.Size = new System.Drawing.Size(121, 29);
             this.ReturnBtn.TabIndex = 11;

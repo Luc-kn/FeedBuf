@@ -12,10 +12,10 @@ namespace Feedbuff
 {
     internal class DAL
     {
-        string connectionString = "Data Source=ASUSDRAGON\\SQLEXPRESS;Initial Catalog=FeedBuf;Integrated Security=True";
+        string connectionString = "";
         public List<Feedback> feedbacks = new List<Feedback>();
         public List<Feedup> feedups = new List<Feedup>();
-
+        public List<FeedForward> feedForwards = new List<FeedForward>();
 
         public DAL()
         {
@@ -85,5 +85,37 @@ namespace Feedbuff
                 }
             }
             return feedups;
-        }    }
+        }
+        public List<FeedForward> ReadFeedForward()
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand())
+                {
+                    connection.ConnectionString = connectionString;
+                    connection.Open();
+                    command.Connection = connection;
+                    command.CommandText = "SELECT Id, Date, Documentback, Subject, TeacherName, GivenFeedForward, Controle from FeedForward ORDER BY ID";
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            feedForwards.Add(new FeedForward(Int32.Parse(reader[0].ToString())
+                                    , DateTime.Parse(reader[1].ToString())
+                                    , reader[2].ToString()
+                                    , reader[3].ToString()
+                                    , reader[4].ToString()
+                                    , reader[5].ToString()
+                                    , bool.Parse(reader[6].ToString())
+                                    ));
+
+                        }
+                    }
+
+                }
+            }
+            return feedForwards;
+        }
+    }
 }
