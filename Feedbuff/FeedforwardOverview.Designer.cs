@@ -126,6 +126,7 @@
             this.ReturnBtn.TabIndex = 12;
             this.ReturnBtn.Text = "terug";
             this.ReturnBtn.UseVisualStyleBackColor = true;
+            this.ReturnBtn.Click += new System.EventHandler(this.ReturnBtn_Click);
             // 
             // FeedforwardOverview
             // 

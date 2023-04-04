@@ -16,5 +16,13 @@ namespace Feedbuff
         {
             InitializeComponent();
         }
+
+        private void ReturnBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Overview overview = new Overview();
+            overview.ShowDialog();
+            this.Close();
+        }
     }
 }
