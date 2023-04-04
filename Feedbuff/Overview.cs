@@ -21,5 +21,21 @@ namespace Feedbuff
         {
             this.Close();
         }
+
+        private void goToFeedbackBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FeedbackOverview feedbackOverview = new FeedbackOverview();
+            feedbackOverview.ShowDialog();
+            this.Close();
+        }
+
+        private void LogoutBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Student_Login Studentlg = new Student_Login();
+            Studentlg.ShowDialog();
+            this.Close();
+        }
     }
 }
