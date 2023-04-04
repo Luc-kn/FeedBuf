@@ -37,5 +37,13 @@ namespace Feedbuff
             Studentlg.ShowDialog();
             this.Close();
         }
+
+        private void feedForwardBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FeedforwardOverview feedforwardOverview = new FeedforwardOverview();
+            feedforwardOverview.ShowDialog();
+            this.Close();
+        }
     }
 }

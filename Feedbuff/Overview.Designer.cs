@@ -55,6 +55,7 @@
             this.feedForwardBtn.TabIndex = 1;
             this.feedForwardBtn.Text = "Feedforward";
             this.feedForwardBtn.UseVisualStyleBackColor = true;
+            this.feedForwardBtn.Click += new System.EventHandler(this.feedForwardBtn_Click);
             // 
             // goalsLstBx
             // 
