@@ -62,6 +62,12 @@
       <DependentUpon>FeedforwardOverview.cs</DependentUpon>
     </Compile>
     <Compile Include="Feedup.cs" />
+    <Compile Include="FeedupOverview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FeedupOverview.Designer.cs">
+      <DependentUpon>FeedupOverview.cs</DependentUpon>
+    </Compile>
     <Compile Include="Overview.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +101,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FeedforwardOverview.resx">
       <DependentUpon>FeedforwardOverview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FeedupOverview.resx">
+      <DependentUpon>FeedupOverview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Overview.resx">
       <DependentUpon>Overview.cs</DependentUpon>
