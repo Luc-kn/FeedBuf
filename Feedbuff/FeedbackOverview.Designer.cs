@@ -97,6 +97,7 @@
             this.addFeedbackToDataBaseBtn.TabIndex = 7;
             this.addFeedbackToDataBaseBtn.Text = "opslaan";
             this.addFeedbackToDataBaseBtn.UseVisualStyleBackColor = true;
+            this.addFeedbackToDataBaseBtn.Click += new System.EventHandler(this.addFeedbackToDataBaseBtn_Click);
             // 
             // addFeedbackToDataBaseLbl
             // 

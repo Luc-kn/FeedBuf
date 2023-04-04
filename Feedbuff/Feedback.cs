@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Dynamic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,6 +36,10 @@ namespace Feedbuff
         public List<Feedback> Read()
         {
             return dal.ReadFeedback();
+        }
+        public Feedback Create(Feedback feedback)
+        {
+            return dal.CreateFeedback(feedback);
         }
     }
 }

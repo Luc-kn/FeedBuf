@@ -27,6 +27,10 @@ namespace Feedbuff
             this.Close();
         }
 
-        
+        private void addFeedbackToDataBaseBtn_Click(object sender, EventArgs e)
+        {
+            Feedback feedback = new Feedback(0, DateTime.Now, "A", "a", "A", "A", true);
+            
+        }
     }
 }

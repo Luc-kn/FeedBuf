@@ -117,5 +117,32 @@ namespace Feedbuff
             }
             return feedForwards;
         }
+        public Feedback CreateFeedback(Feedback feedback)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    string sql = "INSERT INTO FeedbackData (Date, Document, Subject, TeacherName, GivenFeedback, Controle) VALUES (@Date, @Document, @Subject, @TeacherName, @GivenFeedback, @Controle)";
+                    connection.Open();
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        command.Parameters.AddWithValue("@Date", feedback.Date);
+                        command.Parameters.AddWithValue("@Document", feedback.Document);
+                        command.Parameters.AddWithValue("@Subject", feedback.Subject);
+                        command.Parameters.AddWithValue("@TeacherName", feedback.ForTeacher);
+                        command.Parameters.AddWithValue("@GivenFeedback", feedback.GivenFeedback);
+                        command.Parameters.AddWithValue("@Controle", feedback.Controle);
+                        command.ExecuteNonQuery();
+                        command.CommandText = "SELECT CAST(@@Identity AS INT);";
+                        int id = (int)command.ExecuteScalar();
+                        feedback.Id = id;
+                    }
+                }
+            }
+
+            catch (SqlException ex) { throw ex; }
+            return feedback;
+        }
     }
 }
