@@ -15,12 +15,12 @@ namespace Feedbuff
         public string Subject { get; set; }
         public string ForTeacher { get; set; }
         public string GivenFeedback { get; set; }
-        public string Controle { get; set; }
+        public bool Controle { get; set; }
         public Student Student { get; set; }
         public Teacher Teacher { get; set; }
         public DAL dal { get; set; }
 
-        public Feedback(int id, DateTime date, string document, string subject, string forteacher, string givenFeedback, string controle)
+        public Feedback(int id, DateTime date, string document, string subject, string forteacher, string givenFeedback, bool controle)
         {
             Id = id;
             Date = date;

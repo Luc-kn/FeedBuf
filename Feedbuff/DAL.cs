@@ -5,6 +5,7 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using System.Xml.Linq;
 
 namespace Feedbuff
@@ -29,7 +30,7 @@ namespace Feedbuff
                     connection.ConnectionString = connectionString;
                     connection.Open();
                     command.Connection = connection;
-                    command.CommandText = "SELECT Id, Name, Price, Amount, Discription from TBProduct ORDER BY ID";
+                    command.CommandText = "SELECT Id, Date, Documentback, Subject, TeacherName, GivenFeedback, Controle from Feedback ORDER BY ID";
 
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
@@ -41,8 +42,9 @@ namespace Feedbuff
                                     , reader[3].ToString()
                                     , reader[4].ToString()
                                     , reader[5].ToString()
-                                    , reader[6].ToString()
+                                    , bool.Parse(reader[6].ToString())
                                     ));
+                          
                         }
                     }
 
@@ -59,7 +61,7 @@ namespace Feedbuff
                     connection.ConnectionString = connectionString;
                     connection.Open();
                     command.Connection = connection;
-                    command.CommandText = "SELECT Id, Name, Price, Amount, Discription from TBProduct ORDER BY ID";
+                    command.CommandText = "SELECT Id, InitiateDate , Deadline, Documentup, Subject, Teacher, FeedUp, Achieved, DoneDate, SideNote from Feedup ORDER BY ID";
 
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
@@ -70,19 +72,18 @@ namespace Feedbuff
                                     , DateTime.Parse(reader[2].ToString())
                                     , reader[3].ToString()
                                     , reader[4].ToString()
-                                    , Teacher
+                                    , reader[5].ToString()
                                     , reader[6].ToString()
-                                    , reader[7].ToString()
+                                    , bool.Parse(reader[7].ToString())
                                     , DateTime.Parse(reader[6].ToString())
                                     , reader[6].ToString()
                                     ));
                             
-                        }y
+                        }
                     }
 
                 }
             }
             return feedups;
-        }
-    }
+        }    }
 }

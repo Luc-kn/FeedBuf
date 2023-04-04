@@ -12,9 +12,11 @@ namespace Feedbuff
 {
     public partial class FeedbackOverview : Form
     {
-        public FeedbackOverview()
-        {
+        public FeedbackOverview() { 
             InitializeComponent();
+            Feedback DummyFeedback = new Feedback(1, DateTime.Now, "a", "a", "a", "A", true);
+            feedbackFromDatabaseLstBx.Items.Add(DummyFeedback.Read()[0].GivenFeedback);
+
         }
 
         private void ReturnBtn_Click(object sender, EventArgs e)

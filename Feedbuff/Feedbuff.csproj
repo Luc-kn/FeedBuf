@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account.cs" />
+    <Compile Include="DAL.cs" />
     <Compile Include="Feedback.cs" />
     <Compile Include="FeedbackOverview.cs">
       <SubType>Form</SubType>
