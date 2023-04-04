@@ -46,6 +46,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Account.cs" />
+    <Compile Include="Feedback.cs" />
+    <Compile Include="FeedbackOverview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FeedbackOverview.Designer.cs">
+      <DependentUpon>FeedbackOverview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FeedForward.cs" />
+    <Compile Include="FeedforwardOverview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FeedforwardOverview.Designer.cs">
+      <DependentUpon>FeedforwardOverview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Feedup.cs" />
+    <Compile Include="Overview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Overview.Designer.cs">
+      <DependentUpon>Overview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student.cs" />
     <Compile Include="StudentLoginRegister.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,6 +81,7 @@
     <Compile Include="Student_Login.Designer.cs">
       <DependentUpon>Student_Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Teacher.cs" />
     <Compile Include="Welkom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +90,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FeedbackOverview.resx">
+      <DependentUpon>FeedbackOverview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FeedforwardOverview.resx">
+      <DependentUpon>FeedforwardOverview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Overview.resx">
+      <DependentUpon>Overview.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StudentLoginRegister.resx">
       <DependentUpon>StudentLoginRegister.cs</DependentUpon>
     </EmbeddedResource>

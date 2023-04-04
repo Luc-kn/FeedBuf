@@ -56,11 +56,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(223, 243);
+            this.ClientSize = new System.Drawing.Size(226, 208);
             this.Controls.Add(this.studentBtn);
             this.Controls.Add(this.docentBtn);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "Welkom";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Choose your class";
             this.Load += new System.EventHandler(this.Welkom_Load);
             this.ResumeLayout(false);
