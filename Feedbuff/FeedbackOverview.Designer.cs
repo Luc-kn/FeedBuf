@@ -123,12 +123,12 @@
             this.feedbackFromDatabaseLstBx.ItemHeight = 16;
             this.feedbackFromDatabaseLstBx.Location = new System.Drawing.Point(442, 74);
             this.feedbackFromDatabaseLstBx.Name = "feedbackFromDatabaseLstBx";
-            this.feedbackFromDatabaseLstBx.Size = new System.Drawing.Size(326, 340);
+            this.feedbackFromDatabaseLstBx.Size = new System.Drawing.Size(1412, 884);
             this.feedbackFromDatabaseLstBx.TabIndex = 10;
             // 
             // ReturnBtn
             // 
-            this.ReturnBtn.Location = new System.Drawing.Point(12, 409);
+            this.ReturnBtn.Location = new System.Drawing.Point(12, 830);
             this.ReturnBtn.Name = "ReturnBtn";
             this.ReturnBtn.Size = new System.Drawing.Size(121, 29);
             this.ReturnBtn.TabIndex = 11;
@@ -141,7 +141,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1924, 1055);
             this.Controls.Add(this.ReturnBtn);
             this.Controls.Add(this.feedbackFromDatabaseLstBx);
             this.Controls.Add(this.addFeedbackPageNameLbl);

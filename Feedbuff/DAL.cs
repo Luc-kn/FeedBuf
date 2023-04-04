@@ -12,7 +12,7 @@ namespace Feedbuff
 {
     internal class DAL
     {
-        string connectionString = "zet hier de conectionstring";
+        string connectionString = "Data Source=ASUSDRAGON\\SQLEXPRESS;Initial Catalog=FeedBuf;Integrated Security=True";
         public List<Feedback> feedbacks = new List<Feedback>();
         public List<Feedup> feedups = new List<Feedup>();
 
@@ -30,7 +30,7 @@ namespace Feedbuff
                     connection.ConnectionString = connectionString;
                     connection.Open();
                     command.Connection = connection;
-                    command.CommandText = "SELECT Id, Date, Documentback, Subject, TeacherName, GivenFeedback, Controle from Feedback ORDER BY ID";
+                    command.CommandText = "SELECT Id, Date, Documentback, Subject, TeacherName, GivenFeedback, Controle from FeedbackData ORDER BY ID";
 
                     using (SqlDataReader reader = command.ExecuteReader())
                     {

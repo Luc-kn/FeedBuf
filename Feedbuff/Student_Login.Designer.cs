@@ -123,7 +123,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(472, 347);
+            this.ClientSize = new System.Drawing.Size(1920, 1051);
             this.Controls.Add(this.passwordForgotenBtn);
             this.Controls.Add(this.noAcountLbl);
             this.Controls.Add(this.passwordLbl);
