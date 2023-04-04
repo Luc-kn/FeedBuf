@@ -45,5 +45,13 @@ namespace Feedbuff
             feedforwardOverview.ShowDialog();
             this.Close();
         }
+
+        private void leerDoelenBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FeedupOverview feedupOverview = new FeedupOverview();
+            feedupOverview.ShowDialog();
+            this.Close();
+        }
     }
 }

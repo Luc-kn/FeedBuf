@@ -35,6 +35,7 @@
             this.recentFeedforwardLstBx = new System.Windows.Forms.ListBox();
             this.closeBtn = new System.Windows.Forms.Button();
             this.LogoutBtn = new System.Windows.Forms.Button();
+            this.leerDoelenBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // goToFeedbackBtn
@@ -112,12 +113,23 @@
             this.LogoutBtn.UseVisualStyleBackColor = true;
             this.LogoutBtn.Click += new System.EventHandler(this.LogoutBtn_Click);
             // 
+            // leerDoelenBtn
+            // 
+            this.leerDoelenBtn.Location = new System.Drawing.Point(274, 306);
+            this.leerDoelenBtn.Name = "leerDoelenBtn";
+            this.leerDoelenBtn.Size = new System.Drawing.Size(104, 35);
+            this.leerDoelenBtn.TabIndex = 9;
+            this.leerDoelenBtn.Text = "Leerdoelen";
+            this.leerDoelenBtn.UseVisualStyleBackColor = true;
+            this.leerDoelenBtn.Click += new System.EventHandler(this.leerDoelenBtn_Click);
+            // 
             // Overview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.leerDoelenBtn);
             this.Controls.Add(this.LogoutBtn);
             this.Controls.Add(this.closeBtn);
             this.Controls.Add(this.recentFeedforwardLstBx);
@@ -142,5 +154,6 @@
         private System.Windows.Forms.ListBox recentFeedforwardLstBx;
         private System.Windows.Forms.Button closeBtn;
         private System.Windows.Forms.Button LogoutBtn;
+        private System.Windows.Forms.Button leerDoelenBtn;
     }
 }
