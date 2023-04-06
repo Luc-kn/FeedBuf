@@ -39,6 +39,8 @@
             this.addFeedbackPageNameLbl = new System.Windows.Forms.Label();
             this.feedbackFromDatabaseLstBx = new System.Windows.Forms.ListBox();
             this.ReturnBtn = new System.Windows.Forms.Button();
+            this.addTeacherNameLbl = new System.Windows.Forms.Label();
+            this.addTeacherNameTxtbx = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // addFeedbackTxtBx
@@ -91,7 +93,7 @@
             // 
             // addFeedbackToDataBaseBtn
             // 
-            this.addFeedbackToDataBaseBtn.Location = new System.Drawing.Point(139, 158);
+            this.addFeedbackToDataBaseBtn.Location = new System.Drawing.Point(140, 194);
             this.addFeedbackToDataBaseBtn.Name = "addFeedbackToDataBaseBtn";
             this.addFeedbackToDataBaseBtn.Size = new System.Drawing.Size(139, 23);
             this.addFeedbackToDataBaseBtn.TabIndex = 7;
@@ -102,7 +104,7 @@
             // addFeedbackToDataBaseLbl
             // 
             this.addFeedbackToDataBaseLbl.AutoSize = true;
-            this.addFeedbackToDataBaseLbl.Location = new System.Drawing.Point(12, 161);
+            this.addFeedbackToDataBaseLbl.Location = new System.Drawing.Point(13, 197);
             this.addFeedbackToDataBaseLbl.Name = "addFeedbackToDataBaseLbl";
             this.addFeedbackToDataBaseLbl.Size = new System.Drawing.Size(121, 16);
             this.addFeedbackToDataBaseLbl.TabIndex = 8;
@@ -137,12 +139,30 @@
             this.ReturnBtn.UseVisualStyleBackColor = true;
             this.ReturnBtn.Click += new System.EventHandler(this.ReturnBtn_Click);
             // 
+            // addTeacherNameLbl
+            // 
+            this.addTeacherNameLbl.AutoSize = true;
+            this.addTeacherNameLbl.Location = new System.Drawing.Point(9, 164);
+            this.addTeacherNameLbl.Name = "addTeacherNameLbl";
+            this.addTeacherNameLbl.Size = new System.Drawing.Size(118, 16);
+            this.addTeacherNameLbl.TabIndex = 12;
+            this.addTeacherNameLbl.Text = "Docent toevoegen";
+            // 
+            // addTeacherNameTxtbx
+            // 
+            this.addTeacherNameTxtbx.Location = new System.Drawing.Point(133, 161);
+            this.addTeacherNameTxtbx.Name = "addTeacherNameTxtbx";
+            this.addTeacherNameTxtbx.Size = new System.Drawing.Size(281, 22);
+            this.addTeacherNameTxtbx.TabIndex = 13;
+            // 
             // FeedbackOverview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1924, 1055);
+            this.Controls.Add(this.addTeacherNameTxtbx);
+            this.Controls.Add(this.addTeacherNameLbl);
             this.Controls.Add(this.ReturnBtn);
             this.Controls.Add(this.feedbackFromDatabaseLstBx);
             this.Controls.Add(this.addFeedbackPageNameLbl);
@@ -175,5 +195,7 @@
         private System.Windows.Forms.Label addFeedbackPageNameLbl;
         private System.Windows.Forms.ListBox feedbackFromDatabaseLstBx;
         private System.Windows.Forms.Button ReturnBtn;
+        private System.Windows.Forms.Label addTeacherNameLbl;
+        private System.Windows.Forms.TextBox addTeacherNameTxtbx;
     }
 }

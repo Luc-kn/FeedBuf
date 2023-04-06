@@ -15,8 +15,11 @@ namespace Feedbuff
         public FeedbackOverview() { 
             InitializeComponent();
             Feedback DummyFeedback = new Feedback(1, DateTime.Now, "a", "a", "a", "A", true);
-           // feedbackFromDatabaseLstBx.Items.Add(DummyFeedback.Read()[0].GivenFeedback);
-
+            foreach(Feedback item in DummyFeedback.Read())
+            {
+                feedbackFromDatabaseLstBx.Items.Add("date: "+item.Date+" feedback: "+item.GivenFeedback);
+            }
+        
         }
 
         private void ReturnBtn_Click(object sender, EventArgs e)
@@ -29,8 +32,11 @@ namespace Feedbuff
 
         private void addFeedbackToDataBaseBtn_Click(object sender, EventArgs e)
         {
-            Feedback feedback = new Feedback(0, DateTime.Now, "A", "a", "A", "A", true);
+            Feedback feedback = new Feedback(0, DateTime.Now, addDocumentTxtBx.Text, addSubjectTxtBx.Text, addTeacherNameTxtbx.Text, addFeedbackTxtBx.Text, true);
+            Feedback feedbackCreate = feedback.Create(feedback);
             
         }
+
+       
     }
 }

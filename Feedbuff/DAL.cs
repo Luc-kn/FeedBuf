@@ -12,10 +12,10 @@ namespace Feedbuff
 {
     internal class DAL
     {
-        string connectionString = "";
-        public List<Feedback> feedbacks = new List<Feedback>();
+        string connectionString = "Server=tcp:feedbuf.database.windows.net,1433;Initial Catalog=FeedBufDB;Persist Security Info=False;User ID=CloudSAa8987ecc;Password=DisconnectedZuyd123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
         public List<Feedup> feedups = new List<Feedup>();
         public List<FeedForward> feedForwards = new List<FeedForward>();
+        public List<Feedback> feedbacks = new List<Feedback>();
 
         public DAL()
         {
@@ -61,7 +61,7 @@ namespace Feedbuff
                     connection.ConnectionString = connectionString;
                     connection.Open();
                     command.Connection = connection;
-                    command.CommandText = "SELECT Id, InitiateDate , Deadline, Documentup, Subject, Teacher, FeedUp, Achieved, DoneDate, SideNote from Feedup ORDER BY ID";
+                    command.CommandText = "SELECT Id, InitiateDate , Deadline, Documentup, Subject, Teacher, FeedUp, Achieved, DoneDate, SideNote from FeedupData ORDER BY ID";
 
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
@@ -75,8 +75,8 @@ namespace Feedbuff
                                     , reader[5].ToString()
                                     , reader[6].ToString()
                                     , bool.Parse(reader[7].ToString())
-                                    , DateTime.Parse(reader[6].ToString())
-                                    , reader[6].ToString()
+                                    , DateTime.Parse(reader[8].ToString())
+                                    , reader[9].ToString()
                                     ));
                             
                         }
@@ -123,12 +123,12 @@ namespace Feedbuff
             {
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    string sql = "INSERT INTO FeedbackData (Date, Document, Subject, TeacherName, GivenFeedback, Controle) VALUES (@Date, @Document, @Subject, @TeacherName, @GivenFeedback, @Controle)";
+                    string sql = "INSERT INTO FeedbackData (Date, DocumentBack, Subject, TeacherName, GivenFeedback, Controle) VALUES (@Date, @DocumentBack, @Subject, @TeacherName, @GivenFeedback, @Controle)";
                     connection.Open();
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
                         command.Parameters.AddWithValue("@Date", feedback.Date);
-                        command.Parameters.AddWithValue("@Document", feedback.Document);
+                        command.Parameters.AddWithValue("@DocumentBack", feedback.Document);
                         command.Parameters.AddWithValue("@Subject", feedback.Subject);
                         command.Parameters.AddWithValue("@TeacherName", feedback.ForTeacher);
                         command.Parameters.AddWithValue("@GivenFeedback", feedback.GivenFeedback);

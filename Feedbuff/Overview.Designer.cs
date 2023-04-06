@@ -66,7 +66,7 @@
             "Leerdoelen"});
             this.goalsLstBx.Location = new System.Drawing.Point(607, 40);
             this.goalsLstBx.Name = "goalsLstBx";
-            this.goalsLstBx.Size = new System.Drawing.Size(138, 354);
+            this.goalsLstBx.Size = new System.Drawing.Size(901, 610);
             this.goalsLstBx.TabIndex = 3;
             // 
             // recentFeedbackLstBx

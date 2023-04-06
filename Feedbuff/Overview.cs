@@ -15,6 +15,11 @@ namespace Feedbuff
         public Overview()
         {
             InitializeComponent();
+            Feedup DummyFeedup = new Feedup(0, DateTime.Now, DateTime.Now, "a", "a", "a", "A", true, DateTime.Now, "o");
+            foreach (Feedup item in DummyFeedup.Read())
+            {
+                goalsLstBx.Items.Add(item.FeedUp);
+            }
         }
 
         private void Closebtn_Click(object sender, EventArgs e)
