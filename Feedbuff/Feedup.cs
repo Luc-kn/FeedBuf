@@ -40,5 +40,9 @@ namespace Feedbuff
         {
             return dal.ReadFeedup();
         }
+        public Feedup Create(Feedup feedup)
+        {
+            return dal.CreateFeedup(feedup);
+        }
     }
 }

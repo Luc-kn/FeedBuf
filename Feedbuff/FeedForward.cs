@@ -35,5 +35,9 @@ namespace Feedbuff
         {
             return dal.ReadFeedForward();
         }
+        public FeedForward Create(FeedForward Feedforward)
+        {
+            return dal.CreateFeedForward(Feedforward);
+        }
     }
 }
