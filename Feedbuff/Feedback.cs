@@ -41,5 +41,9 @@ namespace Feedbuff
         {
             return dal.CreateFeedback(feedback);
         }
+        public void Updtae(Feedback feedback)
+        {
+            dal.UpdateFeedback(feedback);
+        }
     }
 }

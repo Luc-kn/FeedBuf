@@ -122,11 +122,12 @@
             // 
             // feedbackFromDatabaseLstBx
             // 
+            this.feedbackFromDatabaseLstBx.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.feedbackFromDatabaseLstBx.FormattingEnabled = true;
-            this.feedbackFromDatabaseLstBx.ItemHeight = 16;
+            this.feedbackFromDatabaseLstBx.ItemHeight = 22;
             this.feedbackFromDatabaseLstBx.Location = new System.Drawing.Point(442, 74);
             this.feedbackFromDatabaseLstBx.Name = "feedbackFromDatabaseLstBx";
-            this.feedbackFromDatabaseLstBx.Size = new System.Drawing.Size(1066, 756);
+            this.feedbackFromDatabaseLstBx.Size = new System.Drawing.Size(1066, 752);
             this.feedbackFromDatabaseLstBx.TabIndex = 10;
             // 
             // ReturnBtn

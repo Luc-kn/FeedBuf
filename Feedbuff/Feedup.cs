@@ -12,7 +12,7 @@ namespace Feedbuff
         public int Id{ get; set; }
         public DateTime InitiateDate { get; set; }
         public DateTime Deadline { get; set; }
-        public string Document { get; set; }
+        public string DocumentUp { get; set; }
         public string Subject { get; set; }
         public string Teacher { get; set; }
         public string FeedUp { get; set; }
@@ -21,12 +21,12 @@ namespace Feedbuff
         public string SideNote { get; set; }
         public DAL dal { get; set; }
 
-        public Feedup(int id, DateTime initiateDate, DateTime deadline, string document, string subject, string teacher, string feedUp, bool achieved, DateTime doneDate, string sideNote)
+        public Feedup(int id, DateTime initiateDate, DateTime deadline, string documentUp, string subject, string teacher, string feedUp, bool achieved, DateTime doneDate, string sideNote)
         {
             Id = id;
             InitiateDate = initiateDate;
             Deadline = deadline;
-            Document = document;
+            DocumentUp = documentUp;
             Subject = subject;
             Teacher = teacher;
             FeedUp = feedUp;
@@ -43,6 +43,10 @@ namespace Feedbuff
         public Feedup Create(Feedup feedup)
         {
             return dal.CreateFeedup(feedup);
+        }
+        public void Update(Feedup feedup)
+        {
+            dal.UpdateFeedup(feedup);
         }
     }
 }

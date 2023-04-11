@@ -34,9 +34,14 @@ namespace Feedbuff
         {
             Feedback feedback = new Feedback(0, DateTime.Now, addDocumentTxtBx.Text, addSubjectTxtBx.Text, addTeacherNameTxtbx.Text, addFeedbackTxtBx.Text, true);
             Feedback feedbackCreate = feedback.Create(feedback);
-            
+            feedbackFromDatabaseLstBx.Items.Clear();
+            foreach (Feedback item in feedback.Read())
+            {
+                feedback.Updtae(item);
+                feedbackFromDatabaseLstBx.Items.Add("date: " + item.Date + " feedback: " + item.GivenFeedback);
+            }
+
         }
 
-       
     }
 }

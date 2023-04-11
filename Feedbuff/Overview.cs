@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,13 +13,24 @@ namespace Feedbuff
 {
     public partial class Overview : Form
     {
+        
         public Overview()
         {
+
             InitializeComponent();
+
             Feedup DummyFeedup = new Feedup(0, DateTime.Now, DateTime.Now, "a", "a", "a", "A", true, DateTime.Now, "o");
+            Feedback DummyFeedback = new Feedback(0,DateTime.Now,"a","a","a","a",false);
+            FeedForward DummyFeedforward = new FeedForward(0, DateTime.Now, "a", "a", "a", "a", true);
+            recentFeedbackLstBx.Items.Add(DummyFeedback.Read().Last().GivenFeedback.ToString());
+            recentFeedforwardLstBx.Items.Add(DummyFeedforward.Read().Last().GivenFeedForward.ToString());
             foreach (Feedup item in DummyFeedup.Read())
             {
-                goalsLstBx.Items.Add(item.FeedUp);
+                if(ReturnWeeknum(item.DoneDate) == ReturnWeeknum(DateTime.Now))
+                {
+                    goalsLstBx.Items.Add(item.FeedUp);
+
+                }
             }
         }
 
@@ -35,12 +47,32 @@ namespace Feedbuff
             this.Close();
         }
 
-        private void LogoutBtn_Click(object sender, EventArgs e)
+        private void feedForwardBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Student_Login Studentlg = new Student_Login();
-            Studentlg.ShowDialog();
+            FeedforwardOverview feedforwardOverview = new FeedforwardOverview();
+            feedforwardOverview.ShowDialog();
             this.Close();
         }
+
+        private void FeedupBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FeedupOverview feedforwardOverview = new FeedupOverview();
+            feedforwardOverview.ShowDialog();
+            this.Close();
+        }
+
+        public int ReturnWeeknum(DateTime date) 
+        {
+            DateTime inputDate = date;
+
+            CultureInfo currentCulture = CultureInfo.CurrentCulture;
+
+            var weekNum = currentCulture.Calendar.GetWeekOfYear(inputDate, CalendarWeekRule.FirstDay, DayOfWeek.Monday) - 1;
+            return weekNum;
+        }
+
+       
     }
 }

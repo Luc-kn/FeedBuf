@@ -10,7 +10,7 @@ namespace Feedbuff
     {
         public int Id { get; set; }
         public DateTime Date { get; set; }
-        public string Document { get; set; }
+        public string Documentforward { get; set; }
         public string Subject { get; set; }
         public string ForTeacher { get; set; }
         public string GivenFeedForward { get; set; }
@@ -19,11 +19,11 @@ namespace Feedbuff
         public Teacher Teacher { get; set; }
         public DAL dal { get; set; }
 
-        public FeedForward(int id, DateTime date, string document, string subject, string forteacher, string givenFeedForward, bool controle)
+        public FeedForward(int id, DateTime date, string documentForward, string subject, string forteacher, string givenFeedForward, bool controle)
         {
             Id = id;
             Date = date;
-            Document = document;
+            Documentforward = documentForward;
             Subject = subject;
             ForTeacher = forteacher;
             GivenFeedForward = givenFeedForward;
@@ -38,6 +38,10 @@ namespace Feedbuff
         public FeedForward Create(FeedForward Feedforward)
         {
             return dal.CreateFeedForward(Feedforward);
+        }
+        public void Update(FeedForward Feedforward)
+        {
+            dal.UpdateFeedforward(Feedforward);
         }
     }
 }

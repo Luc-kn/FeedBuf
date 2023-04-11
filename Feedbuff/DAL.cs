@@ -95,7 +95,7 @@ namespace Feedbuff
                     connection.ConnectionString = connectionString;
                     connection.Open();
                     command.Connection = connection;
-                    command.CommandText = "SELECT Id, Date, Documentback, Subject, TeacherName, GivenFeedForward, Controle from FeedForward ORDER BY ID";
+                    command.CommandText = "SELECT Id, Date, Documentforward, Subject, TeacherName, GivenFeedForward, Controle from FeedForwardData ORDER BY ID";
 
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
@@ -150,13 +150,13 @@ namespace Feedbuff
             {
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    string sql = "INSERT INTO FeedupData (InitiateDate, Deadline, Document, Subject, Teacher, FeedUp, Achieved, DoneDate, SideNote) VALUES (@InitiateDate, @Deadline, @Document, @Subject, @Teacher, @FeedUp, @Achieved, @DoneDate, @SideNote)";
+                    string sql = "INSERT INTO FeedupData (InitiateDate, Deadline, DocumentUp, Subject, Teacher, FeedUp, Achieved, DoneDate, SideNote) VALUES (@InitiateDate, @Deadline, @DocumentUp, @Subject, @Teacher, @FeedUp, @Achieved, @DoneDate, @SideNote)";
                     connection.Open();
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
-                        command.Parameters.AddWithValue("@IntiateDate", feedup.InitiateDate);
+                        command.Parameters.AddWithValue("@InitiateDate", feedup.InitiateDate);
                         command.Parameters.AddWithValue("@Deadline", feedup.Deadline);
-                        command.Parameters.AddWithValue("@Document", feedup.Document);
+                        command.Parameters.AddWithValue("@DocumentUp", feedup.DocumentUp);
                         command.Parameters.AddWithValue("@Subject", feedup.Subject);
                         command.Parameters.AddWithValue("@Teacher", feedup.Teacher);
                         command.Parameters.AddWithValue("@FeedUp", feedup.FeedUp);
@@ -179,12 +179,12 @@ namespace Feedbuff
             {
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    string sql = "INSERT INTO FeedbackData (Date, Document, Subject, TeacherName, GivenFeedForward, Controle) VALUES (@Date, @Document, @Subject, @TeacherName, @GivenFeedForward, @Controle)";
+                    string sql = "INSERT INTO FeedForwardData (Date, Documentforward, Subject, TeacherName, GivenFeedForward, Controle) VALUES (@Date, @Documentforward, @Subject, @TeacherName, @GivenFeedForward, @Controle)";
                     connection.Open();
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
                         command.Parameters.AddWithValue("@Date", feedforward.Date);
-                        command.Parameters.AddWithValue("@Document", feedforward.Document);
+                        command.Parameters.AddWithValue("@Documentforward", feedforward.Documentforward);
                         command.Parameters.AddWithValue("@Subject", feedforward.Subject);
                         command.Parameters.AddWithValue("@TeacherName", feedforward.ForTeacher);
                         command.Parameters.AddWithValue("@GivenFeedforward", feedforward.GivenFeedForward);
@@ -200,6 +200,82 @@ namespace Feedbuff
             catch (SqlException ex) { throw ex; }
             return feedforward;
         }
+        public void UpdateFeedup(Feedup feedup)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    string sql = "UPDATE FeedupData SET InitiateDate = @InitiateDate, Deadline = @Deadline, DocumentUp = @DocumentUp, Subject = @Subject, Teacher = @Teacher, FeedUp = @FeedUp, Achieved = @Achieved, DoneDate = @DoneDate, SideNote = @SideNote WHERE Id = @Id";
+                    connection.Open();
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        command.Parameters.AddWithValue("@Id", feedup.Id);
+                        command.Parameters.AddWithValue("@InitiateDate", feedup.InitiateDate);
+                        command.Parameters.AddWithValue("@Deadline", feedup.Deadline);
+                        command.Parameters.AddWithValue("@DocumentUp", feedup.DocumentUp);
+                        command.Parameters.AddWithValue("@Subject", feedup.Subject);
+                        command.Parameters.AddWithValue("@Teacher", feedup.Teacher);
+                        command.Parameters.AddWithValue("@FeedUp", feedup.FeedUp);
+                        command.Parameters.AddWithValue("@Achieved", feedup.Achieved);
+                        command.Parameters.AddWithValue("@DoneDate", feedup.DoneDate);
+                        command.Parameters.AddWithValue("@SideNote", feedup.SideNote);
+                        command.ExecuteNonQuery();
+
+                    }
+                }
+            }
+            catch (SqlException ex) { throw ex; }
+        }
+        public void UpdateFeedback(Feedback feedback)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    string sql = "UPDATE FeedbackData SET Date = @Date, DocumentBack = @DocumentBack, Subject = @Subject, TeacherName = @TeacherName, GivenFeedback = @GivenFeedback, Controle = @Controle WHERE Id = @Id";
+                    connection.Open();
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        command.Parameters.AddWithValue("@Id", feedback.Id);
+                        command.Parameters.AddWithValue("@Date", feedback.Date);
+                        command.Parameters.AddWithValue("@DocumentBack", feedback.Document);
+                        command.Parameters.AddWithValue("@Subject", feedback.Subject);
+                        command.Parameters.AddWithValue("@TeacherName", feedback.ForTeacher);
+                        command.Parameters.AddWithValue("@GivenFeedback", feedback.GivenFeedback);
+                        command.Parameters.AddWithValue("@Controle", feedback.Controle);
+                        command.ExecuteNonQuery();
+
+                    }
+                }
+            }
+            catch (SqlException ex) { throw ex; }
+        }
+        public void UpdateFeedforward(FeedForward feedforward)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    string sql = "UPDATE FeedForwardData SET Date = @Date, Documentforward = @Documentforward, Subject = @Subject, TeacherName = @TeacherName, GivenFeedforward = @GivenFeedforward, Controle = @Controle WHERE Id = @Id";
+                    connection.Open();
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        command.Parameters.AddWithValue("@Id", feedforward.Id);
+                        command.Parameters.AddWithValue("@Date", feedforward.Date);
+                        command.Parameters.AddWithValue("@Documentforward", feedforward.Documentforward);
+                        command.Parameters.AddWithValue("@Subject", feedforward.Subject);
+                        command.Parameters.AddWithValue("@TeacherName", feedforward.ForTeacher);
+                        command.Parameters.AddWithValue("@GivenFeedforward", feedforward.GivenFeedForward);
+                        command.Parameters.AddWithValue("@Controle", feedforward.Controle);
+                        command.ExecuteNonQuery();
+
+                    }
+                }
+            }
+            catch (SqlException ex) { throw ex; }
+        }
     }
+
 
 }
