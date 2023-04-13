@@ -16,10 +16,43 @@ namespace Feedbuff
         public List<Feedup> feedups = new List<Feedup>();
         public List<FeedForward> feedForwards = new List<FeedForward>();
         public List<Feedback> feedbacks = new List<Feedback>();
+        public List<Student> students = new List<Student>();
 
         public DAL()
         {
             
+        }
+
+        public List<Student> ReadStudent()
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand())
+                {
+                    connection.ConnectionString = connectionString;
+                    connection.Open();
+                    command.Connection = connection;
+                    command.CommandText = "SELECT Id, FirstName, LastName, Infix, StudentNumber, Email, Password from AccStudent ORDER BY ID";
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            students.Add(new Student(Int32.Parse(reader[0].ToString())
+                                    , reader[1].ToString()
+                                    , reader[2].ToString()
+                                    , reader[3].ToString()
+                                    , Int32.Parse(reader[4].ToString())
+                                    , reader[5].ToString()
+                                    , reader[6].ToString()
+                                    ));
+
+                        }
+                    }
+
+                }
+            }
+            return students;
         }
         public List<Feedback> ReadFeedback()
         {
@@ -275,7 +308,56 @@ namespace Feedbuff
             }
             catch (SqlException ex) { throw ex; }
         }
+        public void DeleteFeedback(Feedback feedback)
+        {
+            feedbacks.Clear();
+            using (SqlConnection cnn = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand())
+                {
+                    cnn.ConnectionString = connectionString;
+                    cnn.Open();
+                    command.Connection = cnn;
+                    command.CommandText = "DELETE FeedbackData WHERE id = @id;";
+                    command.Parameters.AddWithValue("@id", feedback.Id);
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+        public void DeleteFeedup(Feedup feedup)
+        {
+            feedbacks.Clear();
+            using (SqlConnection cnn = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand())
+                {
+                    cnn.ConnectionString = connectionString;
+                    cnn.Open();
+                    command.Connection = cnn;
+                    command.CommandText = "DELETE FeedupkData WHERE id = @id;";
+                    command.Parameters.AddWithValue("@id", feedup.Id);
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+        public void DeleteFeedforward(FeedForward feedforward)
+        {
+            feedForwards.Clear();
+            using (SqlConnection cnn = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand())
+                {
+                    cnn.ConnectionString = connectionString;
+                    cnn.Open();
+                    command.Connection = cnn;
+                    command.CommandText = "DELETE FeedForwardData WHERE id = @id;";
+                    command.Parameters.AddWithValue("@id", feedforward.Id);
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
     }
+    
 
 
 }

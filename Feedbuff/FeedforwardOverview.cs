@@ -15,22 +15,20 @@ namespace Feedbuff
         public FeedforwardOverview()
         {
             InitializeComponent();
-            FeedForward DummyFeedforward = new FeedForward(1, DateTime.Now, "a", "a", "a", "A", true);
-            foreach (FeedForward item in DummyFeedforward.Read())
-            {
-                feedforwardFromDatabaseLstBx.Items.Add("date: " + item.Date + " feedforward: " + item.GivenFeedForward);
-            }
+            feedforwadDVG.Columns[0].Visible = false;
+            //This line of code loads data into the 'feedBufDBDataSet1.FeedbackData' table. You can move, or remove it, as needed.
+            this.feedForwardDataTableAdapter.Fill(this.feedBufDBDataSet.FeedForwardData);
+
+
         }
 
         private void addFeedbackToDataBaseBtn_Click(object sender, EventArgs e)
         {
             FeedForward feedforward = new FeedForward(0, DateTime.Now, addDocumentTxtBx.Text, addSubjectTxtBx.Text, addTeacherNameTxtbx.Text, addFeedbackTxtBx.Text, false);
             FeedForward feedbackCreate = feedforward.Create(feedforward);
-            feedforwardFromDatabaseLstBx.Items.Clear();
             foreach(FeedForward item in feedforward.Read())
             {
                 feedforward.Update(item);
-                feedforwardFromDatabaseLstBx.Items.Add("date: " + item.Date + " feedforward: " + item.GivenFeedForward);
 
             }
         }
@@ -41,6 +39,23 @@ namespace Feedbuff
             Overview overview = new Overview();
             overview.ShowDialog();
             this.Close();
+        }
+
+        private void FeedforwardOverview_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'feedBufDBDataSet.FeedForwardData' table. You can move, or remove it, as needed.
+            this.feedForwardDataTableAdapter.Fill(this.feedBufDBDataSet.FeedForwardData);
+
+        }
+
+        private void deleteBtn_Click(object sender, EventArgs e)
+        {
+            FeedForward feedforward = new FeedForward(Int32.Parse(feedforwadDVG.SelectedRows[0].Cells[0].Value.ToString()), DateTime.Now, "a", "a", "a", "a",false);
+            feedforward.Delete(feedforward);
+            foreach (DataGridViewRow item in this.feedforwadDVG.SelectedRows)
+            {
+                feedforwadDVG.Rows.RemoveAt(item.Index);
+            }
         }
     }
 }

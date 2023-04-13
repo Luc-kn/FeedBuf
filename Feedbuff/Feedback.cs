@@ -45,5 +45,9 @@ namespace Feedbuff
         {
             dal.UpdateFeedback(feedback);
         }
+        public void Delete(Feedback feedback)
+        {
+            dal.DeleteFeedback(feedback);
+        }
     }
 }

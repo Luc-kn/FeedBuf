@@ -55,6 +55,21 @@
     <Compile Include="FeedbackOverview.Designer.cs">
       <DependentUpon>FeedbackOverview.cs</DependentUpon>
     </Compile>
+    <Compile Include="FeedBufDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FeedBufDBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FeedBufDBDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FeedBufDBDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FeedBufDBDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FeedBufDBDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FeedForward.cs" />
     <Compile Include="FeedforwardOverview.cs">
       <SubType>Form</SubType>
@@ -127,6 +142,39 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="FeedBufDBDataSet.xsc">
+      <DependentUpon>FeedBufDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FeedBufDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FeedBufDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FeedBufDBDataSet.xss">
+      <DependentUpon>FeedBufDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FeedBufDBDataSet1.xsc">
+      <DependentUpon>FeedBufDBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="FeedBufDBDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FeedBufDBDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FeedBufDBDataSet1.xss">
+      <DependentUpon>FeedBufDBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="FeedBufDBDataSet2.xsc">
+      <DependentUpon>FeedBufDBDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="FeedBufDBDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FeedBufDBDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FeedBufDBDataSet2.xss">
+      <DependentUpon>FeedBufDBDataSet2.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -28,10 +28,23 @@ namespace Feedbuff
 
         private void Loginbtn_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            Student_Login sl = new Student_Login();
             Overview StudentOv = new Overview();
-            StudentOv.ShowDialog();
-            this.Close();
+
+            Student dummyStudent = new Student(0,"A","a","a",0,"a","a");
+            foreach (Student item in dummyStudent.Read()) 
+             {
+                if (fillInEmailTxtBx.Text == item.Email)
+                {
+                    if (fillInPasswordTxtBx.Text == item.Password)
+                    {
+                        sl.Hide();
+                        StudentOv.ShowDialog();
+                        Visible = false;
+                    }
+                }
+            }
+            
         }
 
         

@@ -14,12 +14,9 @@ namespace Feedbuff
     {
         public FeedbackOverview() { 
             InitializeComponent();
-            Feedback DummyFeedback = new Feedback(1, DateTime.Now, "a", "a", "a", "A", true);
-            foreach(Feedback item in DummyFeedback.Read())
-            {
-                feedbackFromDatabaseLstBx.Items.Add("date: "+item.Date+" feedback: "+item.GivenFeedback);
-            }
-        
+            feedbackDGV.Columns[0].Visible = false;
+
+
         }
 
         private void ReturnBtn_Click(object sender, EventArgs e)
@@ -34,14 +31,33 @@ namespace Feedbuff
         {
             Feedback feedback = new Feedback(0, DateTime.Now, addDocumentTxtBx.Text, addSubjectTxtBx.Text, addTeacherNameTxtbx.Text, addFeedbackTxtBx.Text, true);
             Feedback feedbackCreate = feedback.Create(feedback);
-            feedbackFromDatabaseLstBx.Items.Clear();
-            foreach (Feedback item in feedback.Read())
+            //This line of code loads data into the 'feedBufDBDataSet1.FeedbackData' table. You can move, or remove it, as needed.
+            this.feedbackDataTableAdapter.Fill(this.feedBufDBDataSet1.FeedbackData);
+
+
+        }
+
+        private void deleteBtn_Click(object sender, EventArgs e)
+        {
+            Feedback feedback = new Feedback(Int32.Parse(feedbackDGV.SelectedRows[0].Cells[0].Value.ToString()),DateTime.Now,"a","a","a","a",false);
+            feedback.Delete(feedback);
+            foreach (DataGridViewRow item in this.feedbackDGV.SelectedRows)
             {
-                feedback.Updtae(item);
-                feedbackFromDatabaseLstBx.Items.Add("date: " + item.Date + " feedback: " + item.GivenFeedback);
+                feedbackDGV.Rows.RemoveAt(item.Index);
             }
 
         }
+
+        private void FeedbackOverview_Load(object sender, EventArgs e)
+        {
+            //This line of code loads data into the 'feedBufDBDataSet1.FeedbackData' table. You can move, or remove it, as needed.
+            this.feedbackDataTableAdapter.Fill(this.feedBufDBDataSet1.FeedbackData);
+
+        }
+
+
+      
+
 
     }
 }

@@ -11,25 +11,29 @@ namespace Feedbuff
     {
         public int Id {get; set;}
         public string FirstName {get; set;}
+        public string Infix { get; set;}
         public string LastName {get; set;}
         public int StudentNumber {get; set;}
-        public string Email;
-        public string Wachtwoord {get; set;}
+        public string Email { get; set; }
+        public string Password {get; set;}
         public List<Teacher> teachers = new List<Teacher>();
         public List<Feedup> feedups = new List<Feedup>();    
         public List<FeedForward> feedforwards = new List<FeedForward>();
         public List<Feedback> feedbacks = new List<Feedback>();
         public Account Account;
+        public DAL dal { get; set; }
 
-        public Student(int id, string firstName, string lastName, int studentNumber, string email, string wachtwoord, Account account)
+        public Student(int id, string firstName,string infix, string lastName, int studentNumber, string email, string password)
         {
             Id = id;
             FirstName = firstName;
+            Infix = infix;
             LastName = lastName;
             StudentNumber = studentNumber;
             Email = email;
-            Wachtwoord = wachtwoord;
-            Account = account;
+            Password = password;
+            dal = new DAL();
+
         }
         public string GetEmail()
         {
@@ -40,6 +44,10 @@ namespace Feedbuff
             
             Email = email;
             
+        }
+        public List<Student> Read() 
+        {
+            return dal.ReadStudent();
         }
     }
 }

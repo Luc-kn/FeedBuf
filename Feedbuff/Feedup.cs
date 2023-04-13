@@ -48,5 +48,9 @@ namespace Feedbuff
         {
             dal.UpdateFeedup(feedup);
         }
+        public void Delete(Feedup feedup)
+        {
+            dal.DeleteFeedup(feedup);
+        }
     }
 }

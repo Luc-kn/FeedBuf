@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.addTeacherNameTxtbx = new System.Windows.Forms.TextBox();
             this.addTeacherNameLbl = new System.Windows.Forms.Label();
             this.ReturnBtn = new System.Windows.Forms.Button();
-            this.feedupFromDatabaseLstBx = new System.Windows.Forms.ListBox();
             this.pageNameLbl = new System.Windows.Forms.Label();
             this.addFeedbackToDataBaseLbl = new System.Windows.Forms.Label();
             this.addFeedbackToDataBaseBtn = new System.Windows.Forms.Button();
@@ -43,6 +43,24 @@
             this.addFeedupTxtBx = new System.Windows.Forms.TextBox();
             this.addDoneDateTxtBx = new System.Windows.Forms.TextBox();
             this.doneDateLbl = new System.Windows.Forms.Label();
+            this.feedupDGV = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.initiateDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.deadlineDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.documentUpDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subjectDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.teacherDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.feedUpDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.achievedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.doneDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sideNoteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.feedupDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.feedBufDBDataSet2 = new Feedbuff.FeedBufDBDataSet2();
+            this.feedupDataTableAdapter = new Feedbuff.FeedBufDBDataSet2TableAdapters.FeedupDataTableAdapter();
+            this.deleteBtn = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.feedupDGV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.feedupDataBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.feedBufDBDataSet2)).BeginInit();
             this.SuspendLayout();
             // 
             // addTeacherNameTxtbx
@@ -69,18 +87,6 @@
             this.ReturnBtn.TabIndex = 24;
             this.ReturnBtn.Text = "terug";
             this.ReturnBtn.UseVisualStyleBackColor = true;
-            this.ReturnBtn.Click += new System.EventHandler(this.ReturnBtn_Click);
-            // 
-            // feedupFromDatabaseLstBx
-            // 
-            this.feedupFromDatabaseLstBx.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.feedupFromDatabaseLstBx.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.feedupFromDatabaseLstBx.FormattingEnabled = true;
-            this.feedupFromDatabaseLstBx.ItemHeight = 22;
-            this.feedupFromDatabaseLstBx.Location = new System.Drawing.Point(441, 60);
-            this.feedupFromDatabaseLstBx.Name = "feedupFromDatabaseLstBx";
-            this.feedupFromDatabaseLstBx.Size = new System.Drawing.Size(1066, 752);
-            this.feedupFromDatabaseLstBx.TabIndex = 23;
             // 
             // pageNameLbl
             // 
@@ -109,7 +115,6 @@
             this.addFeedbackToDataBaseBtn.TabIndex = 20;
             this.addFeedbackToDataBaseBtn.Text = "opslaan";
             this.addFeedbackToDataBaseBtn.UseVisualStyleBackColor = true;
-            this.addFeedbackToDataBaseBtn.Click += new System.EventHandler(this.addFeedbackToDataBaseBtn_Click);
             // 
             // addDocumentTxtBx
             // 
@@ -165,7 +170,6 @@
             this.addDoneDateTxtBx.Name = "addDoneDateTxtBx";
             this.addDoneDateTxtBx.Size = new System.Drawing.Size(281, 22);
             this.addDoneDateTxtBx.TabIndex = 28;
-            this.addDoneDateTxtBx.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // doneDateLbl
             // 
@@ -176,18 +180,149 @@
             this.doneDateLbl.TabIndex = 27;
             this.doneDateLbl.Text = "datum af";
             // 
+            // feedupDGV
+            // 
+            this.feedupDGV.AllowUserToAddRows = false;
+            this.feedupDGV.AutoGenerateColumns = false;
+            this.feedupDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.feedupDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.initiateDateDataGridViewTextBoxColumn,
+            this.deadlineDataGridViewTextBoxColumn,
+            this.documentUpDataGridViewTextBoxColumn,
+            this.subjectDataGridViewTextBoxColumn,
+            this.teacherDataGridViewTextBoxColumn,
+            this.feedUpDataGridViewTextBoxColumn,
+            this.achievedDataGridViewCheckBoxColumn,
+            this.doneDateDataGridViewTextBoxColumn,
+            this.sideNoteDataGridViewTextBoxColumn});
+            this.feedupDGV.DataSource = this.feedupDataBindingSource;
+            this.feedupDGV.Location = new System.Drawing.Point(476, 56);
+            this.feedupDGV.Name = "feedupDGV";
+            this.feedupDGV.ReadOnly = true;
+            this.feedupDGV.RowHeadersWidth = 51;
+            this.feedupDGV.RowTemplate.Height = 24;
+            this.feedupDGV.Size = new System.Drawing.Size(1042, 760);
+            this.feedupDGV.TabIndex = 29;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // initiateDateDataGridViewTextBoxColumn
+            // 
+            this.initiateDateDataGridViewTextBoxColumn.DataPropertyName = "InitiateDate";
+            this.initiateDateDataGridViewTextBoxColumn.HeaderText = "InitiateDate";
+            this.initiateDateDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.initiateDateDataGridViewTextBoxColumn.Name = "initiateDateDataGridViewTextBoxColumn";
+            this.initiateDateDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // deadlineDataGridViewTextBoxColumn
+            // 
+            this.deadlineDataGridViewTextBoxColumn.DataPropertyName = "Deadline";
+            this.deadlineDataGridViewTextBoxColumn.HeaderText = "Deadline";
+            this.deadlineDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.deadlineDataGridViewTextBoxColumn.Name = "deadlineDataGridViewTextBoxColumn";
+            this.deadlineDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // documentUpDataGridViewTextBoxColumn
+            // 
+            this.documentUpDataGridViewTextBoxColumn.DataPropertyName = "DocumentUp";
+            this.documentUpDataGridViewTextBoxColumn.HeaderText = "DocumentUp";
+            this.documentUpDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.documentUpDataGridViewTextBoxColumn.Name = "documentUpDataGridViewTextBoxColumn";
+            this.documentUpDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // subjectDataGridViewTextBoxColumn
+            // 
+            this.subjectDataGridViewTextBoxColumn.DataPropertyName = "Subject";
+            this.subjectDataGridViewTextBoxColumn.HeaderText = "Subject";
+            this.subjectDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.subjectDataGridViewTextBoxColumn.Name = "subjectDataGridViewTextBoxColumn";
+            this.subjectDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // teacherDataGridViewTextBoxColumn
+            // 
+            this.teacherDataGridViewTextBoxColumn.DataPropertyName = "Teacher";
+            this.teacherDataGridViewTextBoxColumn.HeaderText = "Teacher";
+            this.teacherDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.teacherDataGridViewTextBoxColumn.Name = "teacherDataGridViewTextBoxColumn";
+            this.teacherDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // feedUpDataGridViewTextBoxColumn
+            // 
+            this.feedUpDataGridViewTextBoxColumn.DataPropertyName = "FeedUp";
+            this.feedUpDataGridViewTextBoxColumn.HeaderText = "FeedUp";
+            this.feedUpDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.feedUpDataGridViewTextBoxColumn.Name = "feedUpDataGridViewTextBoxColumn";
+            this.feedUpDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // achievedDataGridViewCheckBoxColumn
+            // 
+            this.achievedDataGridViewCheckBoxColumn.DataPropertyName = "Achieved";
+            this.achievedDataGridViewCheckBoxColumn.HeaderText = "Achieved";
+            this.achievedDataGridViewCheckBoxColumn.MinimumWidth = 6;
+            this.achievedDataGridViewCheckBoxColumn.Name = "achievedDataGridViewCheckBoxColumn";
+            this.achievedDataGridViewCheckBoxColumn.Width = 125;
+            // 
+            // doneDateDataGridViewTextBoxColumn
+            // 
+            this.doneDateDataGridViewTextBoxColumn.DataPropertyName = "DoneDate";
+            this.doneDateDataGridViewTextBoxColumn.HeaderText = "DoneDate";
+            this.doneDateDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.doneDateDataGridViewTextBoxColumn.Name = "doneDateDataGridViewTextBoxColumn";
+            this.doneDateDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // sideNoteDataGridViewTextBoxColumn
+            // 
+            this.sideNoteDataGridViewTextBoxColumn.DataPropertyName = "SideNote";
+            this.sideNoteDataGridViewTextBoxColumn.HeaderText = "SideNote";
+            this.sideNoteDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.sideNoteDataGridViewTextBoxColumn.Name = "sideNoteDataGridViewTextBoxColumn";
+            this.sideNoteDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // feedupDataBindingSource
+            // 
+            this.feedupDataBindingSource.DataMember = "FeedupData";
+            this.feedupDataBindingSource.DataSource = this.feedBufDBDataSet2;
+            // 
+            // feedBufDBDataSet2
+            // 
+            this.feedBufDBDataSet2.DataSetName = "FeedBufDBDataSet2";
+            this.feedBufDBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // feedupDataTableAdapter
+            // 
+            this.feedupDataTableAdapter.ClearBeforeFill = true;
+            // 
+            // deleteBtn
+            // 
+            this.deleteBtn.Location = new System.Drawing.Point(277, 221);
+            this.deleteBtn.Name = "deleteBtn";
+            this.deleteBtn.Size = new System.Drawing.Size(135, 23);
+            this.deleteBtn.TabIndex = 30;
+            this.deleteBtn.Text = "verwijderen";
+            this.deleteBtn.UseVisualStyleBackColor = true;
+            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
+            // 
             // FeedupOverview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1924, 1055);
+            this.Controls.Add(this.deleteBtn);
+            this.Controls.Add(this.feedupDGV);
             this.Controls.Add(this.addDoneDateTxtBx);
             this.Controls.Add(this.doneDateLbl);
             this.Controls.Add(this.addTeacherNameTxtbx);
             this.Controls.Add(this.addTeacherNameLbl);
             this.Controls.Add(this.ReturnBtn);
-            this.Controls.Add(this.feedupFromDatabaseLstBx);
             this.Controls.Add(this.pageNameLbl);
             this.Controls.Add(this.addFeedbackToDataBaseLbl);
             this.Controls.Add(this.addFeedbackToDataBaseBtn);
@@ -200,6 +335,9 @@
             this.Name = "FeedupOverview";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FeedupOverview";
+            ((System.ComponentModel.ISupportInitialize)(this.feedupDGV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.feedupDataBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.feedBufDBDataSet2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -210,7 +348,6 @@
         private System.Windows.Forms.TextBox addTeacherNameTxtbx;
         private System.Windows.Forms.Label addTeacherNameLbl;
         private System.Windows.Forms.Button ReturnBtn;
-        private System.Windows.Forms.ListBox feedupFromDatabaseLstBx;
         private System.Windows.Forms.Label pageNameLbl;
         private System.Windows.Forms.Label addFeedbackToDataBaseLbl;
         private System.Windows.Forms.Button addFeedbackToDataBaseBtn;
@@ -222,5 +359,20 @@
         private System.Windows.Forms.TextBox addFeedupTxtBx;
         private System.Windows.Forms.TextBox addDoneDateTxtBx;
         private System.Windows.Forms.Label doneDateLbl;
+        private System.Windows.Forms.DataGridView feedupDGV;
+        private FeedBufDBDataSet2 feedBufDBDataSet2;
+        private System.Windows.Forms.BindingSource feedupDataBindingSource;
+        private FeedBufDBDataSet2TableAdapters.FeedupDataTableAdapter feedupDataTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn initiateDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn deadlineDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn documentUpDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn subjectDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn teacherDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn feedUpDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn achievedDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn doneDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sideNoteDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button deleteBtn;
     }
 }

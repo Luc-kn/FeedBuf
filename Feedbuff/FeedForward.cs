@@ -43,5 +43,9 @@ namespace Feedbuff
         {
             dal.UpdateFeedforward(Feedforward);
         }
+        public void Delete(FeedForward Feedforward)
+        {
+            dal.DeleteFeedforward(Feedforward);
+        }
     }
 }

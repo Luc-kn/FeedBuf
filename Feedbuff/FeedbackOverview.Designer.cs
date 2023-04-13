@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.addFeedbackTxtBx = new System.Windows.Forms.TextBox();
             this.addFeedbackLbl = new System.Windows.Forms.Label();
             this.asignSubject = new System.Windows.Forms.Label();
@@ -37,10 +38,26 @@
             this.addFeedbackToDataBaseBtn = new System.Windows.Forms.Button();
             this.addFeedbackToDataBaseLbl = new System.Windows.Forms.Label();
             this.addFeedbackPageNameLbl = new System.Windows.Forms.Label();
-            this.feedbackFromDatabaseLstBx = new System.Windows.Forms.ListBox();
             this.ReturnBtn = new System.Windows.Forms.Button();
             this.addTeacherNameLbl = new System.Windows.Forms.Label();
             this.addTeacherNameTxtbx = new System.Windows.Forms.TextBox();
+            this.deleteBtn = new System.Windows.Forms.Button();
+            this.feedBufDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.feedbackDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.feedBufDBDataSet1 = new Feedbuff.FeedBufDBDataSet1();
+            this.feedbackDataTableAdapter = new Feedbuff.FeedBufDBDataSet1TableAdapters.FeedbackDataTableAdapter();
+            this.feedbackDGV = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.documentBackDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subjectDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.teacherNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.givenFeedbackDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.controleDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.feedBufDBDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.feedbackDataBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.feedBufDBDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.feedbackDGV)).BeginInit();
             this.SuspendLayout();
             // 
             // addFeedbackTxtBx
@@ -120,16 +137,6 @@
             this.addFeedbackPageNameLbl.TabIndex = 9;
             this.addFeedbackPageNameLbl.Text = "Feedback toevoegen, in zien en veranderen";
             // 
-            // feedbackFromDatabaseLstBx
-            // 
-            this.feedbackFromDatabaseLstBx.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.feedbackFromDatabaseLstBx.FormattingEnabled = true;
-            this.feedbackFromDatabaseLstBx.ItemHeight = 22;
-            this.feedbackFromDatabaseLstBx.Location = new System.Drawing.Point(442, 74);
-            this.feedbackFromDatabaseLstBx.Name = "feedbackFromDatabaseLstBx";
-            this.feedbackFromDatabaseLstBx.Size = new System.Drawing.Size(1066, 752);
-            this.feedbackFromDatabaseLstBx.TabIndex = 10;
-            // 
             // ReturnBtn
             // 
             this.ReturnBtn.Location = new System.Drawing.Point(12, 801);
@@ -156,16 +163,125 @@
             this.addTeacherNameTxtbx.Size = new System.Drawing.Size(281, 22);
             this.addTeacherNameTxtbx.TabIndex = 13;
             // 
+            // deleteBtn
+            // 
+            this.deleteBtn.Location = new System.Drawing.Point(156, 439);
+            this.deleteBtn.Name = "deleteBtn";
+            this.deleteBtn.Size = new System.Drawing.Size(75, 23);
+            this.deleteBtn.TabIndex = 14;
+            this.deleteBtn.Text = "Verwijderen";
+            this.deleteBtn.UseVisualStyleBackColor = true;
+            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
+            // 
+            // feedbackDataBindingSource
+            // 
+            this.feedbackDataBindingSource.DataMember = "FeedbackData";
+            this.feedbackDataBindingSource.DataSource = this.feedBufDBDataSet1;
+            // 
+            // feedBufDBDataSet1
+            // 
+            this.feedBufDBDataSet1.DataSetName = "FeedBufDBDataSet1";
+            this.feedBufDBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // feedbackDataTableAdapter
+            // 
+            this.feedbackDataTableAdapter.ClearBeforeFill = true;
+            // 
+            // feedbackDGV
+            // 
+            this.feedbackDGV.AutoGenerateColumns = false;
+            this.feedbackDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.feedbackDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.dateDataGridViewTextBoxColumn,
+            this.documentBackDataGridViewTextBoxColumn,
+            this.subjectDataGridViewTextBoxColumn,
+            this.teacherNameDataGridViewTextBoxColumn,
+            this.givenFeedbackDataGridViewTextBoxColumn,
+            this.controleDataGridViewCheckBoxColumn});
+            this.feedbackDGV.DataSource = this.feedbackDataBindingSource;
+            this.feedbackDGV.Location = new System.Drawing.Point(442, 74);
+            this.feedbackDGV.Name = "feedbackDGV";
+            this.feedbackDGV.ReadOnly = true;
+            this.feedbackDGV.RowHeadersWidth = 51;
+            this.feedbackDGV.RowTemplate.Height = 24;
+            this.feedbackDGV.Size = new System.Drawing.Size(1066, 756);
+            this.feedbackDGV.TabIndex = 15;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // dateDataGridViewTextBoxColumn
+            // 
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
+            this.dateDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dateDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // documentBackDataGridViewTextBoxColumn
+            // 
+            this.documentBackDataGridViewTextBoxColumn.DataPropertyName = "DocumentBack";
+            this.documentBackDataGridViewTextBoxColumn.HeaderText = "DocumentBack";
+            this.documentBackDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.documentBackDataGridViewTextBoxColumn.Name = "documentBackDataGridViewTextBoxColumn";
+            this.documentBackDataGridViewTextBoxColumn.ReadOnly = true;
+            this.documentBackDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // subjectDataGridViewTextBoxColumn
+            // 
+            this.subjectDataGridViewTextBoxColumn.DataPropertyName = "Subject";
+            this.subjectDataGridViewTextBoxColumn.HeaderText = "Subject";
+            this.subjectDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.subjectDataGridViewTextBoxColumn.Name = "subjectDataGridViewTextBoxColumn";
+            this.subjectDataGridViewTextBoxColumn.ReadOnly = true;
+            this.subjectDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // teacherNameDataGridViewTextBoxColumn
+            // 
+            this.teacherNameDataGridViewTextBoxColumn.DataPropertyName = "TeacherName";
+            this.teacherNameDataGridViewTextBoxColumn.HeaderText = "TeacherName";
+            this.teacherNameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.teacherNameDataGridViewTextBoxColumn.Name = "teacherNameDataGridViewTextBoxColumn";
+            this.teacherNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.teacherNameDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // givenFeedbackDataGridViewTextBoxColumn
+            // 
+            this.givenFeedbackDataGridViewTextBoxColumn.DataPropertyName = "GivenFeedback";
+            this.givenFeedbackDataGridViewTextBoxColumn.HeaderText = "GivenFeedback";
+            this.givenFeedbackDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.givenFeedbackDataGridViewTextBoxColumn.Name = "givenFeedbackDataGridViewTextBoxColumn";
+            this.givenFeedbackDataGridViewTextBoxColumn.ReadOnly = true;
+            this.givenFeedbackDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // controleDataGridViewCheckBoxColumn
+            // 
+            this.controleDataGridViewCheckBoxColumn.DataPropertyName = "Controle";
+            this.controleDataGridViewCheckBoxColumn.HeaderText = "Controle";
+            this.controleDataGridViewCheckBoxColumn.MinimumWidth = 6;
+            this.controleDataGridViewCheckBoxColumn.Name = "controleDataGridViewCheckBoxColumn";
+            this.controleDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.controleDataGridViewCheckBoxColumn.Width = 125;
+            // 
             // FeedbackOverview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1924, 1055);
+            this.Controls.Add(this.feedbackDGV);
+            this.Controls.Add(this.deleteBtn);
             this.Controls.Add(this.addTeacherNameTxtbx);
             this.Controls.Add(this.addTeacherNameLbl);
             this.Controls.Add(this.ReturnBtn);
-            this.Controls.Add(this.feedbackFromDatabaseLstBx);
             this.Controls.Add(this.addFeedbackPageNameLbl);
             this.Controls.Add(this.addFeedbackToDataBaseLbl);
             this.Controls.Add(this.addFeedbackToDataBaseBtn);
@@ -178,6 +294,11 @@
             this.Name = "FeedbackOverview";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FeedbackOverview";
+            this.Load += new System.EventHandler(this.FeedbackOverview_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.feedBufDBDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.feedbackDataBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.feedBufDBDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.feedbackDGV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -194,9 +315,21 @@
         private System.Windows.Forms.Button addFeedbackToDataBaseBtn;
         private System.Windows.Forms.Label addFeedbackToDataBaseLbl;
         private System.Windows.Forms.Label addFeedbackPageNameLbl;
-        private System.Windows.Forms.ListBox feedbackFromDatabaseLstBx;
         private System.Windows.Forms.Button ReturnBtn;
         private System.Windows.Forms.Label addTeacherNameLbl;
         private System.Windows.Forms.TextBox addTeacherNameTxtbx;
+        private System.Windows.Forms.Button deleteBtn;
+        private System.Windows.Forms.BindingSource feedBufDBDataSetBindingSource;
+        private FeedBufDBDataSet1 feedBufDBDataSet1;
+        private System.Windows.Forms.BindingSource feedbackDataBindingSource;
+        private FeedBufDBDataSet1TableAdapters.FeedbackDataTableAdapter feedbackDataTableAdapter;
+        private System.Windows.Forms.DataGridView feedbackDGV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn documentBackDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn subjectDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn teacherNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn givenFeedbackDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn controleDataGridViewCheckBoxColumn;
     }
 }
