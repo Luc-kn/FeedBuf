@@ -87,6 +87,7 @@
             this.ReturnBtn.TabIndex = 24;
             this.ReturnBtn.Text = "terug";
             this.ReturnBtn.UseVisualStyleBackColor = true;
+            this.ReturnBtn.Click += new System.EventHandler(this.ReturnBtn_Click_1);
             // 
             // pageNameLbl
             // 

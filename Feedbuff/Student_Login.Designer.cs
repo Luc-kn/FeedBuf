@@ -37,6 +37,7 @@
             this.passwordLbl = new System.Windows.Forms.Label();
             this.noAcountLbl = new System.Windows.Forms.Label();
             this.passwordForgotenBtn = new System.Windows.Forms.Button();
+            this.wrongLoginLbl = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // loginBtn
@@ -118,12 +119,21 @@
             this.passwordForgotenBtn.Text = "Wachtwoord vergeten";
             this.passwordForgotenBtn.UseVisualStyleBackColor = true;
             // 
+            // wrongLoginLbl
+            // 
+            this.wrongLoginLbl.AutoSize = true;
+            this.wrongLoginLbl.Location = new System.Drawing.Point(67, 206);
+            this.wrongLoginLbl.Name = "wrongLoginLbl";
+            this.wrongLoginLbl.Size = new System.Drawing.Size(0, 16);
+            this.wrongLoginLbl.TabIndex = 9;
+            // 
             // Student_Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1920, 1051);
+            this.Controls.Add(this.wrongLoginLbl);
             this.Controls.Add(this.passwordForgotenBtn);
             this.Controls.Add(this.noAcountLbl);
             this.Controls.Add(this.passwordLbl);
@@ -153,5 +163,6 @@
         private System.Windows.Forms.Label passwordLbl;
         private System.Windows.Forms.Label noAcountLbl;
         private System.Windows.Forms.Button passwordForgotenBtn;
+        private System.Windows.Forms.Label wrongLoginLbl;
     }
 }

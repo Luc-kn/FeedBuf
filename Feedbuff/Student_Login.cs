@@ -28,7 +28,6 @@ namespace Feedbuff
 
         private void Loginbtn_Click(object sender, EventArgs e)
         {
-            Student_Login sl = new Student_Login();
             Overview StudentOv = new Overview();
 
             Student dummyStudent = new Student(0,"A","a","a",0,"a","a");
@@ -36,12 +35,22 @@ namespace Feedbuff
              {
                 if (fillInEmailTxtBx.Text == item.Email)
                 {
+                    wrongLoginLbl.Text = "";
                     if (fillInPasswordTxtBx.Text == item.Password)
                     {
-                        sl.Hide();
+                        wrongLoginLbl.Text = "";
+                        this.Hide();
                         StudentOv.ShowDialog();
-                        Visible = false;
+                        this.Close();
                     }
+                    else
+                    {
+                        wrongLoginLbl.Text = "FOUT";
+                    }
+                }
+                else
+                {
+                    wrongLoginLbl.Text = "FOUT";
                 }
             }
             

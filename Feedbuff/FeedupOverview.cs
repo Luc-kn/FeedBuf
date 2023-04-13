@@ -58,6 +58,14 @@ namespace Feedbuff
                 feedupDGV.Rows.RemoveAt(item.Index);
             }
         }
+
+        private void ReturnBtn_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            Overview overview = new Overview();
+            overview.ShowDialog();
+            this.Close();
+        }
     }
     } 
 
