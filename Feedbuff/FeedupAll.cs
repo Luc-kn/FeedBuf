@@ -21,16 +21,29 @@ namespace Feedbuff
             feedupDataTableAdapter.Fill(this.feedBufDBDataSet3.FeedupData);
 
         }
+        public static bool achviedData;
+        public static int Id;
+
 
         private void BackBtn_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Feedup feedup = new Feedup(0, DateTime.Today, DateTime.Now, "", "", "", "", true, DateTime.Now, "");
 
-            foreach (Feedup item in feedup.Read())
+            Feedup dummyFeedup = new Feedup(0, DateTime.Today, DateTime.Now, "", "", "", "", true, DateTime.Now, "");
+            foreach(DataGridViewRow item in feedupDGV.SelectedRows)
             {
-                feedup.Update(item);
+                foreach(Feedup i in dummyFeedup.Read())
+                {
+                    if (Int32.Parse(item.Cells[0].Value.ToString()) == i.Id)
+                    {
+                        Id = i.Id;
+                        dummyFeedup = i;
+                    }
+                }
+                achviedData = bool.Parse(item.Cells[7].Value.ToString());
             }
+            Feedup feedup1 = new Feedup(Id, dummyFeedup.InitiateDate, dummyFeedup.Deadline, dummyFeedup.DocumentUp, dummyFeedup.Subject, dummyFeedup.Teacher, dummyFeedup.FeedUp, achviedData, dummyFeedup.DoneDate, dummyFeedup.SideNote);
+            dummyFeedup.Update(feedup1);
+
             feedupDataTableAdapter.Fill(this.feedBufDBDataSet3.FeedupData);
             FeedupOverview feedupOverview = new FeedupOverview();
             feedupOverview.ShowDialog();
