@@ -21,12 +21,12 @@ namespace Feedbuff
             recentFeedbackLstBx.Text = "Meest recente feedback.";
             recentFeedforwardLstBx.Text = "Meest recente Feedforward.";
             goalsLstBx.Text = "Leerdoelen van deze week.";
-            Feedup DummyFeedup = new Feedup(0, DateTime.Now, DateTime.Now, "a", "a", "a", "A", true, DateTime.Now, "o");
-            Feedback DummyFeedback = new Feedback(0,DateTime.Now,"a","a","a","a",false);
-            FeedForward DummyFeedforward = new FeedForward(0, DateTime.Now, "a", "a", "a", "a", true);
-            recentFeedbackLstBx.Items.Add(DummyFeedback.Read().Last().GivenFeedback.ToString());
-            recentFeedforwardLstBx.Items.Add(DummyFeedforward.Read().Last().GivenFeedForward.ToString());
-            foreach (Feedup item in DummyFeedup.Read())
+            Feedup dummyFeedup = new Feedup(0, DateTime.Now, DateTime.Now, "a", "a", "a", "A", true, DateTime.Now, "o");
+            Feedback dummyFeedback = new Feedback(0,DateTime.Now,"a","a","a","a",false,dummyFeedup);
+            FeedForward dummyFeedforward = new FeedForward(0, DateTime.Now, "a", "a", "a", "a", true);
+            recentFeedbackLstBx.Items.Add(dummyFeedback.Read(dummyFeedup).Last().GivenFeedback.ToString());
+            recentFeedforwardLstBx.Items.Add(dummyFeedforward.Read().Last().GivenFeedForward.ToString());
+            foreach (Feedup item in dummyFeedup.Read())
             {
                 if(ReturnWeeknum(item.DoneDate) == ReturnWeeknum(DateTime.Now))
                 {

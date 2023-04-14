@@ -19,6 +19,7 @@ namespace Feedbuff
         public bool Achieved { get; set; } = false;
         public DateTime DoneDate { get; set; }
         public string SideNote { get; set; }
+        public List<Feedback> feedbacks { get; set; } = new List<Feedback>(); 
         public DAL dal { get; set; }
 
         public Feedup(int id, DateTime initiateDate, DateTime deadline, string documentUp, string subject, string teacher, string feedUp, bool achieved, DateTime doneDate, string sideNote)

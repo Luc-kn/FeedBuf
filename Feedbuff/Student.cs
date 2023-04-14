@@ -20,7 +20,7 @@ namespace Feedbuff
         public List<Feedup> feedups = new List<Feedup>();    
         public List<FeedForward> feedforwards = new List<FeedForward>();
         public List<Feedback> feedbacks = new List<Feedback>();
-        public Account Account;
+        public Account Account { get; set;}
         public DAL dal { get; set; }
 
         public Student(int id, string firstName,string infix, string lastName, int studentNumber, string email, string password)

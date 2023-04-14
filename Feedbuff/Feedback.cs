@@ -19,9 +19,10 @@ namespace Feedbuff
         public bool Controle { get; set; }
         public Student Student { get; set; }
         public Teacher Teacher { get; set; }
+        public Feedup Feedup { get; set; }
         public DAL dal { get; set; }
 
-        public Feedback(int id, DateTime date, string document, string subject, string forteacher, string givenFeedback, bool controle)
+        public Feedback(int id, DateTime date, string document, string subject, string forteacher, string givenFeedback, bool controle, Feedup feedup)
         {
             Id = id;
             Date = date;
@@ -31,11 +32,12 @@ namespace Feedbuff
             GivenFeedback = givenFeedback;
             Controle = controle;
             dal = new DAL();
+            Feedup = feedup;
         }
 
-        public List<Feedback> Read()
+        public List<Feedback> Read(Feedup feedup)
         {
-            return dal.ReadFeedback();
+            return dal.ReadFeedback(feedup);
         }
         public Feedback Create(Feedback feedback)
         {

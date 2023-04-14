@@ -70,6 +70,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FeedBufDBDataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="FeedBufDBDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FeedBufDBDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FeedBufDBDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FeedBufDBDataSet4.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FeedForward.cs" />
     <Compile Include="FeedforwardOverview.cs">
       <SubType>Form</SubType>
@@ -83,6 +93,11 @@
     </Compile>
     <Compile Include="FeedupOverview.Designer.cs">
       <DependentUpon>FeedupOverview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="justfeedup.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>justfeedup.xsd</DependentUpon>
     </Compile>
     <Compile Include="Overview.cs">
       <SubType>Form</SubType>
@@ -183,6 +198,39 @@
     </None>
     <None Include="FeedBufDBDataSet2.xss">
       <DependentUpon>FeedBufDBDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="FeedBufDBDataSet3.xsc">
+      <DependentUpon>FeedBufDBDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="FeedBufDBDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FeedBufDBDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FeedBufDBDataSet3.xss">
+      <DependentUpon>FeedBufDBDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="FeedBufDBDataSet4.xsc">
+      <DependentUpon>FeedBufDBDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="FeedBufDBDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FeedBufDBDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FeedBufDBDataSet4.xss">
+      <DependentUpon>FeedBufDBDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="justfeedup.xsc">
+      <DependentUpon>justfeedup.xsd</DependentUpon>
+    </None>
+    <None Include="justfeedup.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>justfeedup.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="justfeedup.xss">
+      <DependentUpon>justfeedup.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

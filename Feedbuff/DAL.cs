@@ -54,7 +54,7 @@ namespace Feedbuff
             }
             return students;
         }
-        public List<Feedback> ReadFeedback()
+        public List<Feedback> ReadFeedback(Feedup feedup)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -76,7 +76,7 @@ namespace Feedbuff
                                     , reader[4].ToString()
                                     , reader[5].ToString()
                                     , bool.Parse(reader[6].ToString())
-                                    ));
+                                    , feedup                                  ));
                           
                         }
                     }
@@ -156,7 +156,7 @@ namespace Feedbuff
             {
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    string sql = "INSERT INTO FeedbackData (Date, DocumentBack, Subject, TeacherName, GivenFeedback, Controle) VALUES (@Date, @DocumentBack, @Subject, @TeacherName, @GivenFeedback, @Controle)";
+                    string sql = "INSERT INTO FeedbackData (Date, DocumentBack, Subject, TeacherName, GivenFeedback, Controle, FeedupId) VALUES (@Date, @DocumentBack, @Subject, @TeacherName, @GivenFeedback, @Controle, @FeedupID)";
                     connection.Open();
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
@@ -166,6 +166,7 @@ namespace Feedbuff
                         command.Parameters.AddWithValue("@TeacherName", feedback.ForTeacher);
                         command.Parameters.AddWithValue("@GivenFeedback", feedback.GivenFeedback);
                         command.Parameters.AddWithValue("@Controle", feedback.Controle);
+                        command.Parameters.AddWithValue("@FeedupId", feedback.Feedup.Id);
                         command.ExecuteNonQuery();
                         command.CommandText = "SELECT CAST(@@Identity AS INT);";
                         int id = (int)command.ExecuteScalar();
@@ -196,6 +197,7 @@ namespace Feedbuff
                         command.Parameters.AddWithValue("@Achieved", feedup.Achieved);
                         command.Parameters.AddWithValue("@DoneDate", feedup.DoneDate);
                         command.Parameters.AddWithValue("@SideNote", feedup.SideNote);
+                        
                         command.ExecuteNonQuery();
                         command.CommandText = "SELECT CAST(@@Identity AS INT);";
                         int id = (int)command.ExecuteScalar();
@@ -334,7 +336,7 @@ namespace Feedbuff
                     cnn.ConnectionString = connectionString;
                     cnn.Open();
                     command.Connection = cnn;
-                    command.CommandText = "DELETE FeedupkData WHERE id = @id;";
+                    command.CommandText = "DELETE FeedupData WHERE id = @id;";
                     command.Parameters.AddWithValue("@id", feedup.Id);
                     command.ExecuteNonQuery();
                 }
