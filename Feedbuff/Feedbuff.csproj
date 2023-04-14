@@ -90,6 +90,12 @@
     <Compile Include="Overview.Designer.cs">
       <DependentUpon>Overview.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProgressOverview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProgressOverview.Designer.cs">
+      <DependentUpon>ProgressOverview.cs</DependentUpon>
+    </Compile>
     <Compile Include="Student.cs" />
     <Compile Include="StudentLoginRegister.cs">
       <SubType>Form</SubType>
@@ -123,6 +129,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Overview.resx">
       <DependentUpon>Overview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProgressOverview.resx">
+      <DependentUpon>ProgressOverview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StudentLoginRegister.resx">
       <DependentUpon>StudentLoginRegister.cs</DependentUpon>

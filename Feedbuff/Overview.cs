@@ -18,7 +18,9 @@ namespace Feedbuff
         {
 
             InitializeComponent();
-
+            recentFeedbackLstBx.Text = "Meest recente feedback.";
+            recentFeedforwardLstBx.Text = "Meest recente Feedforward.";
+            goalsLstBx.Text = "Leerdoelen van deze week.";
             Feedup DummyFeedup = new Feedup(0, DateTime.Now, DateTime.Now, "a", "a", "a", "A", true, DateTime.Now, "o");
             Feedback DummyFeedback = new Feedback(0,DateTime.Now,"a","a","a","a",false);
             FeedForward DummyFeedforward = new FeedForward(0, DateTime.Now, "a", "a", "a", "a", true);
@@ -73,6 +75,12 @@ namespace Feedbuff
             return weekNum;
         }
 
-       
+        private void toProgressOverviewBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ProgressOverview progressOverview = new ProgressOverview();
+            progressOverview.ShowDialog();
+            this.Close();
+        }
     }
 }

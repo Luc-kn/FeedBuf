@@ -33,27 +33,28 @@
             this.goalsLstBx = new System.Windows.Forms.ListBox();
             this.recentFeedbackLstBx = new System.Windows.Forms.ListBox();
             this.recentFeedforwardLstBx = new System.Windows.Forms.ListBox();
-            this.closeBtn = new System.Windows.Forms.Button();
+            this.logOutBtn = new System.Windows.Forms.Button();
             this.FeedupBtn = new System.Windows.Forms.Button();
+            this.toProgressOverviewBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // goToFeedbackBtn
             // 
-            this.goToFeedbackBtn.Location = new System.Drawing.Point(46, 306);
+            this.goToFeedbackBtn.Location = new System.Drawing.Point(161, 294);
             this.goToFeedbackBtn.Name = "goToFeedbackBtn";
-            this.goToFeedbackBtn.Size = new System.Drawing.Size(106, 35);
+            this.goToFeedbackBtn.Size = new System.Drawing.Size(106, 47);
             this.goToFeedbackBtn.TabIndex = 0;
-            this.goToFeedbackBtn.Text = "Feedback";
+            this.goToFeedbackBtn.Text = "Feedback in zien";
             this.goToFeedbackBtn.UseVisualStyleBackColor = true;
             this.goToFeedbackBtn.Click += new System.EventHandler(this.goToFeedbackBtn_Click);
             // 
             // feedForwardBtn
             // 
-            this.feedForwardBtn.Location = new System.Drawing.Point(159, 306);
+            this.feedForwardBtn.Location = new System.Drawing.Point(45, 294);
             this.feedForwardBtn.Name = "feedForwardBtn";
-            this.feedForwardBtn.Size = new System.Drawing.Size(108, 35);
+            this.feedForwardBtn.Size = new System.Drawing.Size(108, 47);
             this.feedForwardBtn.TabIndex = 1;
-            this.feedForwardBtn.Text = "Feedforward";
+            this.feedForwardBtn.Text = "Feedforward in zien";
             this.feedForwardBtn.UseVisualStyleBackColor = true;
             this.feedForwardBtn.Click += new System.EventHandler(this.feedForwardBtn_Click);
             // 
@@ -66,8 +67,8 @@
             this.goalsLstBx.HorizontalScrollbar = true;
             this.goalsLstBx.ItemHeight = 22;
             this.goalsLstBx.Items.AddRange(new object[] {
-            "Leerdoelen"});
-            this.goalsLstBx.Location = new System.Drawing.Point(607, 40);
+            "Leerdoelen van de huidige week."});
+            this.goalsLstBx.Location = new System.Drawing.Point(611, 40);
             this.goalsLstBx.Name = "goalsLstBx";
             this.goalsLstBx.Size = new System.Drawing.Size(901, 596);
             this.goalsLstBx.TabIndex = 3;
@@ -78,8 +79,8 @@
             this.recentFeedbackLstBx.FormattingEnabled = true;
             this.recentFeedbackLstBx.ItemHeight = 22;
             this.recentFeedbackLstBx.Items.AddRange(new object[] {
-            "Feedback"});
-            this.recentFeedbackLstBx.Location = new System.Drawing.Point(48, 58);
+            "Meest recente feedback "});
+            this.recentFeedbackLstBx.Location = new System.Drawing.Point(48, 63);
             this.recentFeedbackLstBx.Name = "recentFeedbackLstBx";
             this.recentFeedbackLstBx.Size = new System.Drawing.Size(490, 48);
             this.recentFeedbackLstBx.TabIndex = 4;
@@ -90,31 +91,41 @@
             this.recentFeedforwardLstBx.FormattingEnabled = true;
             this.recentFeedforwardLstBx.ItemHeight = 22;
             this.recentFeedforwardLstBx.Items.AddRange(new object[] {
-            "Feedforward"});
+            "Meest recente feedforward"});
             this.recentFeedforwardLstBx.Location = new System.Drawing.Point(48, 117);
             this.recentFeedforwardLstBx.Name = "recentFeedforwardLstBx";
             this.recentFeedforwardLstBx.Size = new System.Drawing.Size(490, 48);
             this.recentFeedforwardLstBx.TabIndex = 5;
             // 
-            // closeBtn
+            // logOutBtn
             // 
-            this.closeBtn.Location = new System.Drawing.Point(48, 348);
-            this.closeBtn.Name = "closeBtn";
-            this.closeBtn.Size = new System.Drawing.Size(104, 35);
-            this.closeBtn.TabIndex = 7;
-            this.closeBtn.Text = "Sluiten";
-            this.closeBtn.UseVisualStyleBackColor = true;
-            this.closeBtn.Click += new System.EventHandler(this.Closebtn_Click);
+            this.logOutBtn.Location = new System.Drawing.Point(48, 601);
+            this.logOutBtn.Name = "logOutBtn";
+            this.logOutBtn.Size = new System.Drawing.Size(104, 35);
+            this.logOutBtn.TabIndex = 7;
+            this.logOutBtn.Text = "Uitloggen";
+            this.logOutBtn.UseVisualStyleBackColor = true;
+            this.logOutBtn.Click += new System.EventHandler(this.Closebtn_Click);
             // 
             // FeedupBtn
             // 
             this.FeedupBtn.Location = new System.Drawing.Point(159, 347);
             this.FeedupBtn.Name = "FeedupBtn";
-            this.FeedupBtn.Size = new System.Drawing.Size(108, 35);
+            this.FeedupBtn.Size = new System.Drawing.Size(108, 47);
             this.FeedupBtn.TabIndex = 8;
-            this.FeedupBtn.Text = "Feedup";
+            this.FeedupBtn.Text = "Feedup in zien";
             this.FeedupBtn.UseVisualStyleBackColor = true;
             this.FeedupBtn.Click += new System.EventHandler(this.FeedupBtn_Click);
+            // 
+            // toProgressOverviewBtn
+            // 
+            this.toProgressOverviewBtn.Location = new System.Drawing.Point(45, 347);
+            this.toProgressOverviewBtn.Name = "toProgressOverviewBtn";
+            this.toProgressOverviewBtn.Size = new System.Drawing.Size(108, 47);
+            this.toProgressOverviewBtn.TabIndex = 9;
+            this.toProgressOverviewBtn.Text = "Voortgang overview";
+            this.toProgressOverviewBtn.UseVisualStyleBackColor = true;
+            this.toProgressOverviewBtn.Click += new System.EventHandler(this.toProgressOverviewBtn_Click);
             // 
             // Overview
             // 
@@ -122,8 +133,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1920, 1051);
+            this.Controls.Add(this.toProgressOverviewBtn);
             this.Controls.Add(this.FeedupBtn);
-            this.Controls.Add(this.closeBtn);
+            this.Controls.Add(this.logOutBtn);
             this.Controls.Add(this.recentFeedforwardLstBx);
             this.Controls.Add(this.recentFeedbackLstBx);
             this.Controls.Add(this.goalsLstBx);
@@ -144,7 +156,8 @@
         private System.Windows.Forms.ListBox goalsLstBx;
         private System.Windows.Forms.ListBox recentFeedbackLstBx;
         private System.Windows.Forms.ListBox recentFeedforwardLstBx;
-        private System.Windows.Forms.Button closeBtn;
+        private System.Windows.Forms.Button logOutBtn;
         private System.Windows.Forms.Button FeedupBtn;
+        private System.Windows.Forms.Button toProgressOverviewBtn;
     }
 }
