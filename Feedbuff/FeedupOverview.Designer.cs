@@ -169,7 +169,7 @@
             // 
             this.addDoneDateTxtBx.Location = new System.Drawing.Point(72, 175);
             this.addDoneDateTxtBx.Name = "addDoneDateTxtBx";
-            this.addDoneDateTxtBx.Size = new System.Drawing.Size(281, 22);
+            this.addDoneDateTxtBx.Size = new System.Drawing.Size(341, 22);
             this.addDoneDateTxtBx.TabIndex = 28;
             // 
             // doneDateLbl
@@ -221,6 +221,7 @@
             this.initiateDateDataGridViewTextBoxColumn.HeaderText = "InitiateDate";
             this.initiateDateDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.initiateDateDataGridViewTextBoxColumn.Name = "initiateDateDataGridViewTextBoxColumn";
+            this.initiateDateDataGridViewTextBoxColumn.ReadOnly = true;
             this.initiateDateDataGridViewTextBoxColumn.Width = 125;
             // 
             // deadlineDataGridViewTextBoxColumn
@@ -229,6 +230,7 @@
             this.deadlineDataGridViewTextBoxColumn.HeaderText = "Deadline";
             this.deadlineDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.deadlineDataGridViewTextBoxColumn.Name = "deadlineDataGridViewTextBoxColumn";
+            this.deadlineDataGridViewTextBoxColumn.ReadOnly = true;
             this.deadlineDataGridViewTextBoxColumn.Width = 125;
             // 
             // documentUpDataGridViewTextBoxColumn
@@ -237,6 +239,7 @@
             this.documentUpDataGridViewTextBoxColumn.HeaderText = "DocumentUp";
             this.documentUpDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.documentUpDataGridViewTextBoxColumn.Name = "documentUpDataGridViewTextBoxColumn";
+            this.documentUpDataGridViewTextBoxColumn.ReadOnly = true;
             this.documentUpDataGridViewTextBoxColumn.Width = 125;
             // 
             // subjectDataGridViewTextBoxColumn
@@ -245,6 +248,7 @@
             this.subjectDataGridViewTextBoxColumn.HeaderText = "Subject";
             this.subjectDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.subjectDataGridViewTextBoxColumn.Name = "subjectDataGridViewTextBoxColumn";
+            this.subjectDataGridViewTextBoxColumn.ReadOnly = true;
             this.subjectDataGridViewTextBoxColumn.Width = 125;
             // 
             // teacherDataGridViewTextBoxColumn
@@ -253,6 +257,7 @@
             this.teacherDataGridViewTextBoxColumn.HeaderText = "Teacher";
             this.teacherDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.teacherDataGridViewTextBoxColumn.Name = "teacherDataGridViewTextBoxColumn";
+            this.teacherDataGridViewTextBoxColumn.ReadOnly = true;
             this.teacherDataGridViewTextBoxColumn.Width = 125;
             // 
             // feedUpDataGridViewTextBoxColumn
@@ -261,6 +266,7 @@
             this.feedUpDataGridViewTextBoxColumn.HeaderText = "FeedUp";
             this.feedUpDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.feedUpDataGridViewTextBoxColumn.Name = "feedUpDataGridViewTextBoxColumn";
+            this.feedUpDataGridViewTextBoxColumn.ReadOnly = true;
             this.feedUpDataGridViewTextBoxColumn.Width = 125;
             // 
             // achievedDataGridViewCheckBoxColumn
@@ -269,6 +275,7 @@
             this.achievedDataGridViewCheckBoxColumn.HeaderText = "Achieved";
             this.achievedDataGridViewCheckBoxColumn.MinimumWidth = 6;
             this.achievedDataGridViewCheckBoxColumn.Name = "achievedDataGridViewCheckBoxColumn";
+            this.achievedDataGridViewCheckBoxColumn.ReadOnly = true;
             this.achievedDataGridViewCheckBoxColumn.Width = 125;
             // 
             // doneDateDataGridViewTextBoxColumn
@@ -277,6 +284,7 @@
             this.doneDateDataGridViewTextBoxColumn.HeaderText = "DoneDate";
             this.doneDateDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.doneDateDataGridViewTextBoxColumn.Name = "doneDateDataGridViewTextBoxColumn";
+            this.doneDateDataGridViewTextBoxColumn.ReadOnly = true;
             this.doneDateDataGridViewTextBoxColumn.Width = 125;
             // 
             // sideNoteDataGridViewTextBoxColumn
@@ -285,6 +293,7 @@
             this.sideNoteDataGridViewTextBoxColumn.HeaderText = "SideNote";
             this.sideNoteDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.sideNoteDataGridViewTextBoxColumn.Name = "sideNoteDataGridViewTextBoxColumn";
+            this.sideNoteDataGridViewTextBoxColumn.ReadOnly = true;
             this.sideNoteDataGridViewTextBoxColumn.Width = 125;
             // 
             // feedupDataBindingSource

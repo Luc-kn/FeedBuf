@@ -31,6 +31,7 @@ namespace Feedbuff
                 feedforward.Update(item);
 
             }
+            this.feedForwardDataTableAdapter.Fill(this.feedBufDBDataSet.FeedForwardData);
         }
 
         private void ReturnBtn_Click(object sender, EventArgs e)

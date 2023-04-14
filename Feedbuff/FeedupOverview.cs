@@ -38,7 +38,8 @@ namespace Feedbuff
                 {
                     feedup.Update(item);
                 }
-            }
+            feedupDataTableAdapter.Fill(this.feedBufDBDataSet2.FeedupData);
+        }
 
            
 
@@ -66,6 +67,8 @@ namespace Feedbuff
             overview.ShowDialog();
             this.Close();
         }
+
+        
     }
     } 
 
