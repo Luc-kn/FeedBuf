@@ -68,7 +68,13 @@ namespace Feedbuff
             this.Close();
         }
 
-        
+        private void InfoBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FeedupAll feedupAll = new FeedupAll();
+            feedupAll.ShowDialog();
+            this.Close();
+        }
     }
     } 
 

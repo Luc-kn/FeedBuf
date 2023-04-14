@@ -70,6 +70,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FeedBufDBDataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="FeedBufDBDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FeedBufDBDataSet3.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FeedForward.cs" />
     <Compile Include="FeedforwardOverview.cs">
       <SubType>Form</SubType>
@@ -78,6 +83,12 @@
       <DependentUpon>FeedforwardOverview.cs</DependentUpon>
     </Compile>
     <Compile Include="Feedup.cs" />
+    <Compile Include="FeedupAll.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FeedupAll.Designer.cs">
+      <DependentUpon>FeedupAll.cs</DependentUpon>
+    </Compile>
     <Compile Include="FeedupOverview.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +134,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FeedforwardOverview.resx">
       <DependentUpon>FeedforwardOverview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FeedupAll.resx">
+      <DependentUpon>FeedupAll.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FeedupOverview.resx">
       <DependentUpon>FeedupOverview.cs</DependentUpon>
@@ -183,6 +197,17 @@
     </None>
     <None Include="FeedBufDBDataSet2.xss">
       <DependentUpon>FeedBufDBDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="FeedBufDBDataSet3.xsc">
+      <DependentUpon>FeedBufDBDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="FeedBufDBDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FeedBufDBDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FeedBufDBDataSet3.xss">
+      <DependentUpon>FeedBufDBDataSet3.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

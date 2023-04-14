@@ -54,6 +54,7 @@
             this.teacherNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.givenFeedbackDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.controleDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.InfoBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.feedBufDBDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.feedbackDataBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.feedBufDBDataSet1)).BeginInit();
@@ -271,12 +272,22 @@
             this.controleDataGridViewCheckBoxColumn.ReadOnly = true;
             this.controleDataGridViewCheckBoxColumn.Width = 125;
             // 
+            // InfoBtn
+            // 
+            this.InfoBtn.Location = new System.Drawing.Point(156, 801);
+            this.InfoBtn.Name = "InfoBtn";
+            this.InfoBtn.Size = new System.Drawing.Size(123, 29);
+            this.InfoBtn.TabIndex = 16;
+            this.InfoBtn.Text = "Uitgebreide info";
+            this.InfoBtn.UseVisualStyleBackColor = true;
+            // 
             // FeedbackOverview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1924, 1055);
+            this.Controls.Add(this.InfoBtn);
             this.Controls.Add(this.feedbackDGV);
             this.Controls.Add(this.deleteBtn);
             this.Controls.Add(this.addTeacherNameTxtbx);
@@ -331,5 +342,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn teacherNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn givenFeedbackDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn controleDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.Button InfoBtn;
     }
 }
