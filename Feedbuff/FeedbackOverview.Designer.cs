@@ -54,11 +54,45 @@
             this.teacherNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.givenFeedbackDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.controleDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.InfoBtn = new System.Windows.Forms.Button();
+            this.feedUpIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.feedbackDataBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.feedBufDBDataSet4 = new Feedbuff.FeedBufDBDataSet4();
+            this.feedupDataBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.feedBufDBDataSet2 = new Feedbuff.FeedBufDBDataSet2();
+            this.feedupDataBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.feedBufDBDataSet2BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.feedBufDBDataSet3 = new Feedbuff.FeedBufDBDataSet3();
+            this.feedupDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.feedupDataTableAdapter = new Feedbuff.FeedBufDBDataSet3TableAdapters.FeedupDataTableAdapter();
+            this.feedupDataTableAdapter1 = new Feedbuff.FeedBufDBDataSet2TableAdapters.FeedupDataTableAdapter();
+            this.feedupIdLbl = new System.Windows.Forms.Label();
+            this.feedupCbBx = new System.Windows.Forms.ComboBox();
+            this.feedupDataBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.justfeedup = new Feedbuff.justfeedup();
+            this.feedupDataTableAdapter2 = new Feedbuff.justfeedupTableAdapters.FeedupDataTableAdapter();
+            this.feedbackDataTableAdapter1 = new Feedbuff.FeedBufDBDataSet4TableAdapters.FeedbackDataTableAdapter();
+            this.feedBufDBDataSet4BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.feedBufDBDataSet3BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.feedBufDBDataSet = new Feedbuff.FeedBufDBDataSet();
+            this.feedBufDBDataSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.feedBufDBDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.feedbackDataBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.feedBufDBDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.feedbackDGV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.feedbackDataBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.feedBufDBDataSet4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.feedupDataBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.feedBufDBDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.feedupDataBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.feedBufDBDataSet2BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.feedBufDBDataSet3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.feedupDataBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.feedupDataBindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.justfeedup)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.feedBufDBDataSet4BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.feedBufDBDataSet3BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.feedBufDBDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.feedBufDBDataSetBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // addFeedbackTxtBx
@@ -111,7 +145,7 @@
             // 
             // addFeedbackToDataBaseBtn
             // 
-            this.addFeedbackToDataBaseBtn.Location = new System.Drawing.Point(140, 194);
+            this.addFeedbackToDataBaseBtn.Location = new System.Drawing.Point(136, 267);
             this.addFeedbackToDataBaseBtn.Name = "addFeedbackToDataBaseBtn";
             this.addFeedbackToDataBaseBtn.Size = new System.Drawing.Size(139, 23);
             this.addFeedbackToDataBaseBtn.TabIndex = 7;
@@ -122,7 +156,7 @@
             // addFeedbackToDataBaseLbl
             // 
             this.addFeedbackToDataBaseLbl.AutoSize = true;
-            this.addFeedbackToDataBaseLbl.Location = new System.Drawing.Point(13, 197);
+            this.addFeedbackToDataBaseLbl.Location = new System.Drawing.Point(9, 270);
             this.addFeedbackToDataBaseLbl.Name = "addFeedbackToDataBaseLbl";
             this.addFeedbackToDataBaseLbl.Size = new System.Drawing.Size(121, 16);
             this.addFeedbackToDataBaseLbl.TabIndex = 8;
@@ -199,14 +233,15 @@
             this.subjectDataGridViewTextBoxColumn,
             this.teacherNameDataGridViewTextBoxColumn,
             this.givenFeedbackDataGridViewTextBoxColumn,
-            this.controleDataGridViewCheckBoxColumn});
-            this.feedbackDGV.DataSource = this.feedbackDataBindingSource;
+            this.controleDataGridViewCheckBoxColumn,
+            this.feedUpIdDataGridViewTextBoxColumn});
+            this.feedbackDGV.DataSource = this.feedbackDataBindingSource1;
             this.feedbackDGV.Location = new System.Drawing.Point(442, 74);
             this.feedbackDGV.Name = "feedbackDGV";
             this.feedbackDGV.ReadOnly = true;
             this.feedbackDGV.RowHeadersWidth = 51;
             this.feedbackDGV.RowTemplate.Height = 24;
-            this.feedbackDGV.Size = new System.Drawing.Size(1066, 756);
+            this.feedbackDGV.Size = new System.Drawing.Size(1180, 756);
             this.feedbackDGV.TabIndex = 15;
             // 
             // idDataGridViewTextBoxColumn
@@ -272,14 +307,121 @@
             this.controleDataGridViewCheckBoxColumn.ReadOnly = true;
             this.controleDataGridViewCheckBoxColumn.Width = 125;
             // 
-            // InfoBtn
+            // feedUpIdDataGridViewTextBoxColumn
             // 
-            this.InfoBtn.Location = new System.Drawing.Point(156, 801);
-            this.InfoBtn.Name = "InfoBtn";
-            this.InfoBtn.Size = new System.Drawing.Size(123, 29);
-            this.InfoBtn.TabIndex = 16;
-            this.InfoBtn.Text = "Uitgebreide info";
-            this.InfoBtn.UseVisualStyleBackColor = true;
+            this.feedUpIdDataGridViewTextBoxColumn.DataPropertyName = "FeedUpId";
+            this.feedUpIdDataGridViewTextBoxColumn.HeaderText = "FeedUpId";
+            this.feedUpIdDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.feedUpIdDataGridViewTextBoxColumn.Name = "feedUpIdDataGridViewTextBoxColumn";
+            this.feedUpIdDataGridViewTextBoxColumn.ReadOnly = true;
+            this.feedUpIdDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // feedbackDataBindingSource1
+            // 
+            this.feedbackDataBindingSource1.DataMember = "FeedbackData";
+            this.feedbackDataBindingSource1.DataSource = this.feedBufDBDataSet4;
+            // 
+            // feedBufDBDataSet4
+            // 
+            this.feedBufDBDataSet4.DataSetName = "FeedBufDBDataSet4";
+            this.feedBufDBDataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // feedupDataBindingSource2
+            // 
+            this.feedupDataBindingSource2.DataMember = "FeedupData";
+            this.feedupDataBindingSource2.DataSource = this.feedBufDBDataSet2;
+            // 
+            // feedBufDBDataSet2
+            // 
+            this.feedBufDBDataSet2.DataSetName = "FeedBufDBDataSet2";
+            this.feedBufDBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // feedupDataBindingSource1
+            // 
+            this.feedupDataBindingSource1.DataMember = "FeedupData";
+            this.feedupDataBindingSource1.DataSource = this.feedBufDBDataSet2BindingSource;
+            // 
+            // feedBufDBDataSet2BindingSource
+            // 
+            this.feedBufDBDataSet2BindingSource.DataSource = this.feedBufDBDataSet2;
+            this.feedBufDBDataSet2BindingSource.Position = 0;
+            // 
+            // feedBufDBDataSet3
+            // 
+            this.feedBufDBDataSet3.DataSetName = "FeedBufDBDataSet3";
+            this.feedBufDBDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // feedupDataBindingSource
+            // 
+            this.feedupDataBindingSource.DataMember = "FeedupData";
+            this.feedupDataBindingSource.DataSource = this.feedBufDBDataSet3;
+            // 
+            // feedupDataTableAdapter
+            // 
+            this.feedupDataTableAdapter.ClearBeforeFill = true;
+            // 
+            // feedupDataTableAdapter1
+            // 
+            this.feedupDataTableAdapter1.ClearBeforeFill = true;
+            // 
+            // feedupIdLbl
+            // 
+            this.feedupIdLbl.AutoSize = true;
+            this.feedupIdLbl.Location = new System.Drawing.Point(9, 193);
+            this.feedupIdLbl.Name = "feedupIdLbl";
+            this.feedupIdLbl.Size = new System.Drawing.Size(133, 16);
+            this.feedupIdLbl.TabIndex = 17;
+            this.feedupIdLbl.Text = "Bijbehorende feedup";
+            // 
+            // feedupCbBx
+            // 
+            this.feedupCbBx.AllowDrop = true;
+            this.feedupCbBx.DataSource = this.feedupDataBindingSource3;
+            this.feedupCbBx.DisplayMember = "FeedUp";
+            this.feedupCbBx.FormattingEnabled = true;
+            this.feedupCbBx.Location = new System.Drawing.Point(12, 212);
+            this.feedupCbBx.Name = "feedupCbBx";
+            this.feedupCbBx.Size = new System.Drawing.Size(402, 24);
+            this.feedupCbBx.TabIndex = 18;
+            this.feedupCbBx.ValueMember = "FeedUp";
+            // 
+            // feedupDataBindingSource3
+            // 
+            this.feedupDataBindingSource3.DataMember = "FeedupData";
+            this.feedupDataBindingSource3.DataSource = this.justfeedup;
+            // 
+            // justfeedup
+            // 
+            this.justfeedup.DataSetName = "justfeedup";
+            this.justfeedup.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // feedupDataTableAdapter2
+            // 
+            this.feedupDataTableAdapter2.ClearBeforeFill = true;
+            // 
+            // feedbackDataTableAdapter1
+            // 
+            this.feedbackDataTableAdapter1.ClearBeforeFill = true;
+            // 
+            // feedBufDBDataSet4BindingSource
+            // 
+            this.feedBufDBDataSet4BindingSource.DataSource = this.feedBufDBDataSet4;
+            this.feedBufDBDataSet4BindingSource.Position = 0;
+            // 
+            // feedBufDBDataSet3BindingSource
+            // 
+            this.feedBufDBDataSet3BindingSource.DataSource = this.feedBufDBDataSet3;
+            this.feedBufDBDataSet3BindingSource.Position = 0;
+            // 
+            // feedBufDBDataSet
+            // 
+            this.feedBufDBDataSet.DataSetName = "FeedBufDBDataSet";
+            this.feedBufDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // feedBufDBDataSetBindingSource1
+            // 
+            this.feedBufDBDataSetBindingSource1.DataSource = this.feedBufDBDataSet;
+            this.feedBufDBDataSetBindingSource1.Position = 0;
             // 
             // FeedbackOverview
             // 
@@ -287,7 +429,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1924, 1055);
-            this.Controls.Add(this.InfoBtn);
+            this.Controls.Add(this.feedupCbBx);
+            this.Controls.Add(this.feedupIdLbl);
             this.Controls.Add(this.feedbackDGV);
             this.Controls.Add(this.deleteBtn);
             this.Controls.Add(this.addTeacherNameTxtbx);
@@ -310,6 +453,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.feedbackDataBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.feedBufDBDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.feedbackDGV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.feedbackDataBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.feedBufDBDataSet4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.feedupDataBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.feedBufDBDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.feedupDataBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.feedBufDBDataSet2BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.feedBufDBDataSet3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.feedupDataBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.feedupDataBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.justfeedup)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.feedBufDBDataSet4BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.feedBufDBDataSet3BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.feedBufDBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.feedBufDBDataSetBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -335,6 +492,22 @@
         private System.Windows.Forms.BindingSource feedbackDataBindingSource;
         private FeedBufDBDataSet1TableAdapters.FeedbackDataTableAdapter feedbackDataTableAdapter;
         private System.Windows.Forms.DataGridView feedbackDGV;
+        private System.Windows.Forms.BindingSource feedBufDBDataSet2BindingSource;
+        private FeedBufDBDataSet2 feedBufDBDataSet2;
+        private FeedBufDBDataSet3 feedBufDBDataSet3;
+        private System.Windows.Forms.BindingSource feedupDataBindingSource;
+        private FeedBufDBDataSet3TableAdapters.FeedupDataTableAdapter feedupDataTableAdapter;
+        private System.Windows.Forms.BindingSource feedupDataBindingSource1;
+        private FeedBufDBDataSet2TableAdapters.FeedupDataTableAdapter feedupDataTableAdapter1;
+        private System.Windows.Forms.BindingSource feedupDataBindingSource2;
+        private System.Windows.Forms.Label feedupIdLbl;
+        private System.Windows.Forms.ComboBox feedupCbBx;
+        private justfeedup justfeedup;
+        private System.Windows.Forms.BindingSource feedupDataBindingSource3;
+        private justfeedupTableAdapters.FeedupDataTableAdapter feedupDataTableAdapter2;
+        private FeedBufDBDataSet4 feedBufDBDataSet4;
+        private System.Windows.Forms.BindingSource feedbackDataBindingSource1;
+        private FeedBufDBDataSet4TableAdapters.FeedbackDataTableAdapter feedbackDataTableAdapter1;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn documentBackDataGridViewTextBoxColumn;
@@ -342,6 +515,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn teacherNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn givenFeedbackDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn controleDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.Button InfoBtn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn feedUpIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource feedBufDBDataSet4BindingSource;
+        private System.Windows.Forms.BindingSource feedBufDBDataSet3BindingSource;
+        private FeedBufDBDataSet feedBufDBDataSet;
+        private System.Windows.Forms.BindingSource feedBufDBDataSetBindingSource1;
     }
 }

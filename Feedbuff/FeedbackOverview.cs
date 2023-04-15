@@ -12,7 +12,8 @@ namespace Feedbuff
 {
     public partial class FeedbackOverview : Form
     {
-        public FeedbackOverview() { 
+        public FeedbackOverview()
+        {
             InitializeComponent();
             feedbackDGV.Columns[0].Visible = false;
 
@@ -29,17 +30,30 @@ namespace Feedbuff
 
         private void addFeedbackToDataBaseBtn_Click(object sender, EventArgs e)
         {
-            Feedback feedback = new Feedback(0, DateTime.Now, addDocumentTxtBx.Text, addSubjectTxtBx.Text, addTeacherNameTxtbx.Text, addFeedbackTxtBx.Text, true);
-            Feedback feedbackCreate = feedback.Create(feedback);
-            //This line of code loads data into the 'feedBufDBDataSet1.FeedbackData' table. You can move, or remove it, as needed.
-            this.feedbackDataTableAdapter.Fill(this.feedBufDBDataSet1.FeedbackData);
+            Feedup dummyFeedup = new Feedup(0, DateTime.Now, DateTime.Now, "a", "a", "a", "A", true, DateTime.Now, "o");
+            foreach (Feedup item in dummyFeedup.Read())
+            {
+                if (item.FeedUp == feedupCbBx.GetItemText(feedupCbBx.SelectedItem))
+                {
+                    Feedup feedup = item;
+                    deleteBtn.Text = feedup.Id.ToString();
+                    Feedback feedback = new Feedback(0, DateTime.Now, addDocumentTxtBx.Text, addSubjectTxtBx.Text, addTeacherNameTxtbx.Text, addFeedbackTxtBx.Text, true, feedup);
+                    feedback.Create(feedback);
+                }
+            }
+            // TODO: This line of code loads data into the 'feedBufDBDataSet4.FeedbackData' table. You can move, or remove it, as needed.
+            this.feedbackDataTableAdapter1.Fill(this.feedBufDBDataSet4.FeedbackData);
+            // TODO: This line of code loads data into the 'justfeedup.FeedupData' table. You can move, or remove it, as needed.
+            this.feedupDataTableAdapter2.Fill(this.justfeedup.FeedupData);
+
 
 
         }
 
         private void deleteBtn_Click(object sender, EventArgs e)
         {
-            Feedback feedback = new Feedback(Int32.Parse(feedbackDGV.SelectedRows[0].Cells[0].Value.ToString()),DateTime.Now,"a","a","a","a",false);
+            Feedup dummyFeedup = new Feedup(0, DateTime.Now, DateTime.Now, "a", "a", "a", "A", true, DateTime.Now, "o");
+            Feedback feedback = new Feedback(Int32.Parse(feedbackDGV.SelectedRows[0].Cells[0].Value.ToString()), DateTime.Now, "a", "a", "a", "a", false, dummyFeedup);
             feedback.Delete(feedback);
             foreach (DataGridViewRow item in this.feedbackDGV.SelectedRows)
             {
@@ -50,13 +64,13 @@ namespace Feedbuff
 
         private void FeedbackOverview_Load(object sender, EventArgs e)
         {
-            //This line of code loads data into the 'feedBufDBDataSet1.FeedbackData' table. You can move, or remove it, as needed.
-            this.feedbackDataTableAdapter.Fill(this.feedBufDBDataSet1.FeedbackData);
+            // TODO: This line of code loads data into the 'feedBufDBDataSet4.FeedbackData' table. You can move, or remove it, as needed.
+            this.feedbackDataTableAdapter1.Fill(this.feedBufDBDataSet4.FeedbackData);
+            // TODO: This line of code loads data into the 'justfeedup.FeedupData' table. You can move, or remove it, as needed.
+            this.feedupDataTableAdapter2.Fill(this.justfeedup.FeedupData);
+
 
         }
-
-
-      
 
 
     }

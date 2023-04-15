@@ -44,6 +44,10 @@ namespace Feedbuff
 
         private void FeedforwardOverview_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'feedBufDBDataSet4.FeedbackData' table. You can move, or remove it, as needed.
+            this.feedbackDataTableAdapter.Fill(this.feedBufDBDataSet4.FeedbackData);
+            // TODO: This line of code loads data into the 'justfeedup.FeedupData' table. You can move, or remove it, as needed.
+            this.feedupDataTableAdapter.Fill(this.justfeedup.FeedupData);
             // TODO: This line of code loads data into the 'feedBufDBDataSet.FeedForwardData' table. You can move, or remove it, as needed.
             this.feedForwardDataTableAdapter.Fill(this.feedBufDBDataSet.FeedForwardData);
 

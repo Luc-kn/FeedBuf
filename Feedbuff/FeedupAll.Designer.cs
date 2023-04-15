@@ -215,6 +215,7 @@
             this.Controls.Add(this.feedupDGV);
             this.Controls.Add(this.BackBtn);
             this.Name = "FeedupAll";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FeedupAll";
             this.Load += new System.EventHandler(this.FeedupAll_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.feedBufDBDataSet2)).EndInit();

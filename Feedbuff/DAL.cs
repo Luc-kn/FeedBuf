@@ -54,7 +54,7 @@ namespace Feedbuff
             }
             return students;
         }
-        public List<Feedback> ReadFeedback()
+        public List<Feedback> ReadFeedback(Feedup feedup)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -76,8 +76,8 @@ namespace Feedbuff
                                     , reader[4].ToString()
                                     , reader[5].ToString()
                                     , bool.Parse(reader[6].ToString())
-                                    ));
-                          
+                                    , feedup));
+
                         }
                     }
 

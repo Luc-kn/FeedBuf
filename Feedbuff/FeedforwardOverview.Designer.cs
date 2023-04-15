@@ -42,20 +42,28 @@
             this.addFeedforwardLbl = new System.Windows.Forms.Label();
             this.addFeedbackTxtBx = new System.Windows.Forms.TextBox();
             this.feedforwadDVG = new System.Windows.Forms.DataGridView();
-            this.feedBufDBDataSet = new Feedbuff.FeedBufDBDataSet();
             this.feedForwardDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.feedBufDBDataSet = new Feedbuff.FeedBufDBDataSet();
             this.feedForwardDataTableAdapter = new Feedbuff.FeedBufDBDataSetTableAdapters.FeedForwardDataTableAdapter();
+            this.deleteBtn = new System.Windows.Forms.Button();
+            this.justfeedup = new Feedbuff.justfeedup();
+            this.feedupDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.feedupDataTableAdapter = new Feedbuff.justfeedupTableAdapters.FeedupDataTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.documentforwardDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.subjectDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.teacherNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.givenFeedForwardDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.controleDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.deleteBtn = new System.Windows.Forms.Button();
+            this.feedBufDBDataSet4 = new Feedbuff.FeedBufDBDataSet4();
+            this.feedbackDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.feedbackDataTableAdapter = new Feedbuff.FeedBufDBDataSet4TableAdapters.FeedbackDataTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.feedforwadDVG)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.feedBufDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.feedForwardDataBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.feedBufDBDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.justfeedup)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.feedupDataBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.feedBufDBDataSet4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.feedbackDataBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // addTeacherNameTxtbx
@@ -169,10 +177,8 @@
             this.feedforwadDVG.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
             this.dateDataGridViewTextBoxColumn,
-            this.documentforwardDataGridViewTextBoxColumn,
             this.subjectDataGridViewTextBoxColumn,
             this.teacherNameDataGridViewTextBoxColumn,
-            this.givenFeedForwardDataGridViewTextBoxColumn,
             this.controleDataGridViewCheckBoxColumn});
             this.feedforwadDVG.DataSource = this.feedForwardDataBindingSource;
             this.feedforwadDVG.Location = new System.Drawing.Point(490, 64);
@@ -183,19 +189,43 @@
             this.feedforwadDVG.Size = new System.Drawing.Size(994, 757);
             this.feedforwadDVG.TabIndex = 27;
             // 
-            // feedBufDBDataSet
-            // 
-            this.feedBufDBDataSet.DataSetName = "FeedBufDBDataSet";
-            this.feedBufDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // feedForwardDataBindingSource
             // 
             this.feedForwardDataBindingSource.DataMember = "FeedForwardData";
             this.feedForwardDataBindingSource.DataSource = this.feedBufDBDataSet;
             // 
+            // feedBufDBDataSet
+            // 
+            this.feedBufDBDataSet.DataSetName = "FeedBufDBDataSet";
+            this.feedBufDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // feedForwardDataTableAdapter
             // 
             this.feedForwardDataTableAdapter.ClearBeforeFill = true;
+            // 
+            // deleteBtn
+            // 
+            this.deleteBtn.Location = new System.Drawing.Point(208, 287);
+            this.deleteBtn.Name = "deleteBtn";
+            this.deleteBtn.Size = new System.Drawing.Size(139, 23);
+            this.deleteBtn.TabIndex = 28;
+            this.deleteBtn.Text = "verwijderen";
+            this.deleteBtn.UseVisualStyleBackColor = true;
+            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
+            // 
+            // justfeedup
+            // 
+            this.justfeedup.DataSetName = "justfeedup";
+            this.justfeedup.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // feedupDataBindingSource
+            // 
+            this.feedupDataBindingSource.DataMember = "FeedupData";
+            this.feedupDataBindingSource.DataSource = this.justfeedup;
+            // 
+            // feedupDataTableAdapter
+            // 
+            this.feedupDataTableAdapter.ClearBeforeFill = true;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -212,15 +242,8 @@
             this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
             this.dateDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
             this.dateDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // documentforwardDataGridViewTextBoxColumn
-            // 
-            this.documentforwardDataGridViewTextBoxColumn.DataPropertyName = "Documentforward";
-            this.documentforwardDataGridViewTextBoxColumn.HeaderText = "Documentforward";
-            this.documentforwardDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.documentforwardDataGridViewTextBoxColumn.Name = "documentforwardDataGridViewTextBoxColumn";
-            this.documentforwardDataGridViewTextBoxColumn.Width = 125;
             // 
             // subjectDataGridViewTextBoxColumn
             // 
@@ -228,6 +251,7 @@
             this.subjectDataGridViewTextBoxColumn.HeaderText = "Subject";
             this.subjectDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.subjectDataGridViewTextBoxColumn.Name = "subjectDataGridViewTextBoxColumn";
+            this.subjectDataGridViewTextBoxColumn.ReadOnly = true;
             this.subjectDataGridViewTextBoxColumn.Width = 125;
             // 
             // teacherNameDataGridViewTextBoxColumn
@@ -236,15 +260,8 @@
             this.teacherNameDataGridViewTextBoxColumn.HeaderText = "TeacherName";
             this.teacherNameDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.teacherNameDataGridViewTextBoxColumn.Name = "teacherNameDataGridViewTextBoxColumn";
+            this.teacherNameDataGridViewTextBoxColumn.ReadOnly = true;
             this.teacherNameDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // givenFeedForwardDataGridViewTextBoxColumn
-            // 
-            this.givenFeedForwardDataGridViewTextBoxColumn.DataPropertyName = "GivenFeedForward";
-            this.givenFeedForwardDataGridViewTextBoxColumn.HeaderText = "GivenFeedForward";
-            this.givenFeedForwardDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.givenFeedForwardDataGridViewTextBoxColumn.Name = "givenFeedForwardDataGridViewTextBoxColumn";
-            this.givenFeedForwardDataGridViewTextBoxColumn.Width = 125;
             // 
             // controleDataGridViewCheckBoxColumn
             // 
@@ -252,17 +269,22 @@
             this.controleDataGridViewCheckBoxColumn.HeaderText = "Controle";
             this.controleDataGridViewCheckBoxColumn.MinimumWidth = 6;
             this.controleDataGridViewCheckBoxColumn.Name = "controleDataGridViewCheckBoxColumn";
+            this.controleDataGridViewCheckBoxColumn.ReadOnly = true;
             this.controleDataGridViewCheckBoxColumn.Width = 125;
             // 
-            // deleteBtn
+            // feedBufDBDataSet4
             // 
-            this.deleteBtn.Location = new System.Drawing.Point(208, 287);
-            this.deleteBtn.Name = "deleteBtn";
-            this.deleteBtn.Size = new System.Drawing.Size(139, 23);
-            this.deleteBtn.TabIndex = 28;
-            this.deleteBtn.Text = "verwijderen";
-            this.deleteBtn.UseVisualStyleBackColor = true;
-            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
+            this.feedBufDBDataSet4.DataSetName = "FeedBufDBDataSet4";
+            this.feedBufDBDataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // feedbackDataBindingSource
+            // 
+            this.feedbackDataBindingSource.DataMember = "FeedbackData";
+            this.feedbackDataBindingSource.DataSource = this.feedBufDBDataSet4;
+            // 
+            // feedbackDataTableAdapter
+            // 
+            this.feedbackDataTableAdapter.ClearBeforeFill = true;
             // 
             // FeedforwardOverview
             // 
@@ -289,8 +311,12 @@
             this.Text = "FeedforwardOverview";
             this.Load += new System.EventHandler(this.FeedforwardOverview_Load);
             ((System.ComponentModel.ISupportInitialize)(this.feedforwadDVG)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.feedBufDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.feedForwardDataBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.feedBufDBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.justfeedup)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.feedupDataBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.feedBufDBDataSet4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.feedbackDataBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -314,13 +340,17 @@
         private FeedBufDBDataSet feedBufDBDataSet;
         private System.Windows.Forms.BindingSource feedForwardDataBindingSource;
         private FeedBufDBDataSetTableAdapters.FeedForwardDataTableAdapter feedForwardDataTableAdapter;
+        private System.Windows.Forms.Button deleteBtn;
+        private justfeedup justfeedup;
+        private System.Windows.Forms.BindingSource feedupDataBindingSource;
+        private justfeedupTableAdapters.FeedupDataTableAdapter feedupDataTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn documentforwardDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn subjectDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn teacherNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn givenFeedForwardDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn controleDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.Button deleteBtn;
+        private FeedBufDBDataSet4 feedBufDBDataSet4;
+        private System.Windows.Forms.BindingSource feedbackDataBindingSource;
+        private FeedBufDBDataSet4TableAdapters.FeedbackDataTableAdapter feedbackDataTableAdapter;
     }
 }

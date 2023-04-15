@@ -22,9 +22,9 @@ namespace Feedbuff
             recentFeedforwardLstBx.Text = "Meest recente Feedforward.";
             goalsLstBx.Text = "Leerdoelen van deze week.";
             Feedup DummyFeedup = new Feedup(0, DateTime.Now, DateTime.Now, "a", "a", "a", "A", true, DateTime.Now, "o");
-            Feedback DummyFeedback = new Feedback(0,DateTime.Now,"a","a","a","a",false);
+            Feedback DummyFeedback = new Feedback(0,DateTime.Now,"a","a","a","a",false,DummyFeedup);
             FeedForward DummyFeedforward = new FeedForward(0, DateTime.Now, "a", "a", "a", "a", true);
-            recentFeedbackLstBx.Items.Add(DummyFeedback.Read().Last().GivenFeedback.ToString());
+            recentFeedbackLstBx.Items.Add(DummyFeedback.Read(DummyFeedup).Last().GivenFeedback.ToString());
             recentFeedforwardLstBx.Items.Add(DummyFeedforward.Read().Last().GivenFeedForward.ToString());
             foreach (Feedup item in DummyFeedup.Read())
             {
