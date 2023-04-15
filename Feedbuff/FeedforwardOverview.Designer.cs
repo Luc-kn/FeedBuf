@@ -205,9 +205,9 @@
             // 
             // deleteBtn
             // 
-            this.deleteBtn.Location = new System.Drawing.Point(208, 287);
+            this.deleteBtn.Location = new System.Drawing.Point(299, 185);
             this.deleteBtn.Name = "deleteBtn";
-            this.deleteBtn.Size = new System.Drawing.Size(139, 23);
+            this.deleteBtn.Size = new System.Drawing.Size(115, 23);
             this.deleteBtn.TabIndex = 28;
             this.deleteBtn.Text = "verwijderen";
             this.deleteBtn.UseVisualStyleBackColor = true;

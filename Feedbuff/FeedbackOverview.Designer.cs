@@ -200,11 +200,11 @@
             // 
             // deleteBtn
             // 
-            this.deleteBtn.Location = new System.Drawing.Point(156, 439);
+            this.deleteBtn.Location = new System.Drawing.Point(281, 267);
             this.deleteBtn.Name = "deleteBtn";
-            this.deleteBtn.Size = new System.Drawing.Size(75, 23);
+            this.deleteBtn.Size = new System.Drawing.Size(133, 23);
             this.deleteBtn.TabIndex = 14;
-            this.deleteBtn.Text = "Verwijderen";
+            this.deleteBtn.Text = "verwijderen";
             this.deleteBtn.UseVisualStyleBackColor = true;
             this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
             // 
