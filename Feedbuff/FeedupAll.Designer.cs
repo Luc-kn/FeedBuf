@@ -47,6 +47,7 @@
             this.feedBufDBDataSet3 = new Feedbuff.FeedBufDBDataSet3();
             this.feedBufDBDataSet2BindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.feedupDataTableAdapter = new Feedbuff.FeedBufDBDataSet3TableAdapters.FeedupDataTableAdapter();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.feedBufDBDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.feedBufDBDataSet2BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.feedupDGV)).BeginInit();
@@ -206,12 +207,23 @@
             // 
             this.feedupDataTableAdapter.ClearBeforeFill = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(44, 72);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(637, 16);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "selecteer een rij die je wil aanpassen. Je kan een rij selecteer door op het eers" +
+    "te veld van die rij te drukken";
+            // 
             // FeedupAll
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1924, 874);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.feedupDGV);
             this.Controls.Add(this.BackBtn);
             this.Name = "FeedupAll";
@@ -225,6 +237,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.feedBufDBDataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.feedBufDBDataSet2BindingSource1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -247,5 +260,6 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn achievedDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn doneDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sideNoteDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label label1;
     }
 }
