@@ -15,6 +15,7 @@ namespace Feedbuff
     {
         public FeedupAll()
         {
+            //Loads FeedupAll window and loads datatable from database.
             InitializeComponent();
             feedupDGV.Columns[0].Visible = true;
             //This line of code loads data into the 'feedBufDBDataSet1.FeedbackData' table. You can move, or remove it, as needed.
@@ -24,10 +25,9 @@ namespace Feedbuff
         public static bool achviedData;
         public static int Id;
 
-
         private void BackBtn_Click(object sender, EventArgs e)
         {
-
+            //Returns user back to previous FeedupOverview window and updates changes in de "Achieved" section in database.
             Feedup dummyFeedup = new Feedup(0, DateTime.Today, DateTime.Now, "", "", "", "", true, DateTime.Now, "");
             foreach(DataGridViewRow item in feedupDGV.SelectedRows)
             {

@@ -14,6 +14,7 @@ namespace Feedbuff
     {
         public ProgressOverview()
         {
+            //Loads ProgressOverview window and checks if sidenote section can be shown.
             InitializeComponent();
             Feedup feedup = new Feedup(0,DateTime.Now,DateTime.Now,"a","a","a","a",false,DateTime.Now,"a");
             foreach(Feedup item in feedup.Read())
@@ -28,12 +29,11 @@ namespace Feedbuff
 
         private void returnBtn_Click(object sender, EventArgs e)
         {
+            //Returns user to overview window.
             this.Hide();
             Overview overview = new Overview();
             overview.ShowDialog();
             this.Close();
         }
-
-        
     }
 }

@@ -16,7 +16,7 @@ namespace Feedbuff
         
         public Overview()
         {
-
+            //Loads Overview window and loads recent feedback, feedforward and feedup.
             InitializeComponent();
             recentFeedbackLstBx.Text = "Meest recente feedback.";
             recentFeedforwardLstBx.Text = "Meest recente Feedforward.";
@@ -38,11 +38,13 @@ namespace Feedbuff
 
         private void Closebtn_Click(object sender, EventArgs e)
         {
+            //Stops program.
             this.Close();
         }
 
         private void goToFeedbackBtn_Click(object sender, EventArgs e)
         {
+            //Continues user to feedbackOverview window.
             this.Hide();
             FeedbackOverview feedbackOverview = new FeedbackOverview();
             feedbackOverview.ShowDialog();
@@ -51,6 +53,7 @@ namespace Feedbuff
 
         private void feedForwardBtn_Click(object sender, EventArgs e)
         {
+            //Continues user to feedfowardOverview window.
             this.Hide();
             FeedforwardOverview feedforwardOverview = new FeedforwardOverview();
             feedforwardOverview.ShowDialog();
@@ -59,14 +62,16 @@ namespace Feedbuff
 
         private void FeedupBtn_Click(object sender, EventArgs e)
         {
+            //Continues user to feedupOverview
             this.Hide();
-            FeedupOverview feedforwardOverview = new FeedupOverview();
-            feedforwardOverview.ShowDialog();
+            FeedupOverview feedupOverview = new FeedupOverview();
+            feedupOverview.ShowDialog();
             this.Close();
         }
 
         public int ReturnWeeknum(DateTime date) 
         {
+            //Assigns date to specific dateformat.
             DateTime inputDate = date;
 
             CultureInfo currentCulture = CultureInfo.CurrentCulture;
@@ -77,6 +82,7 @@ namespace Feedbuff
 
         private void toProgressOverviewBtn_Click(object sender, EventArgs e)
         {
+            //Continues user to progressOverview window.
             this.Hide();
             ProgressOverview progressOverview = new ProgressOverview();
             progressOverview.ShowDialog();

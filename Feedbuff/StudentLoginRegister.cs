@@ -15,11 +15,13 @@ namespace Feedbuff
     {
         public StudentLoginRegister()
         {
+            //Loads StudentLoginRegister window.
             InitializeComponent();
         }
 
         private void BackBtn_Click(object sender, EventArgs e)
         {
+            //Continues user to Studentlogin window.
             this.Hide();
             Student_Login Studentlg = new Student_Login();
             Studentlg.ShowDialog();

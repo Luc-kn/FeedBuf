@@ -15,8 +15,10 @@ namespace Feedbuff
     {
         public Welkom()
         {
+            //Loads Welkom window.
             InitializeComponent();
         }
+        //Setting assignment for border styling.
             [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
             private static extern IntPtr CreateRoundRectRgn
          (
@@ -30,6 +32,7 @@ namespace Feedbuff
 
         private void Welkom_Load(object sender, EventArgs e)
         {
+            //Loads Welkom window in certain borderstyle design.
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
@@ -37,6 +40,7 @@ namespace Feedbuff
 
         private void studentBtn_Click(object sender, EventArgs e)
         {
+            //Continues user to Studentlogin window.
             this.Hide();
             Student_Login Studentlg= new Student_Login();
             Studentlg.ShowDialog();

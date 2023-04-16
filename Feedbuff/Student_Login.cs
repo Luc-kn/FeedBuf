@@ -15,11 +15,13 @@ namespace Feedbuff
     {
         public Student_Login()
         {
+            //Loads Student_Login window.
             InitializeComponent();
         }
 
         private void RegisterButton_Click(object sender, EventArgs e)
         {
+            //Continues user to studentregister window.
             this.Hide();
             StudentLoginRegister StudentRg = new StudentLoginRegister();
             StudentRg.ShowDialog();
@@ -28,6 +30,7 @@ namespace Feedbuff
 
         private void Loginbtn_Click(object sender, EventArgs e)
         {
+            //Continues user to studentoverview when login requirements are met.
             Overview StudentOv = new Overview();
 
             Student dummyStudent = new Student(0,"A","a","a",0,"a","a");
@@ -53,9 +56,6 @@ namespace Feedbuff
                     wrongLoginLbl.Text = "FOUT";
                 }
             }
-            
         }
-
-        
     }
 }

@@ -25,6 +25,7 @@ namespace Feedbuff
 
         public List<Student> ReadStudent()
         {
+            //Reads all students from database.
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 using (SqlCommand command = new SqlCommand())
@@ -56,6 +57,7 @@ namespace Feedbuff
         }
         public List<Feedback> ReadFeedback(Feedup feedup)
         {
+            //Reads all feedback from database.
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 using (SqlCommand command = new SqlCommand())
@@ -87,6 +89,7 @@ namespace Feedbuff
         }
         public List<Feedup> ReadFeedup()
         {
+            //Reads all Feedup from database.
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 using (SqlCommand command = new SqlCommand())
@@ -121,6 +124,7 @@ namespace Feedbuff
         }
         public List<FeedForward> ReadFeedForward()
         {
+            //Reads all FeedForward from database.
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 using (SqlCommand command = new SqlCommand())
@@ -152,6 +156,7 @@ namespace Feedbuff
         }
         public Feedback CreateFeedback(Feedback feedback)
         {
+            //Function to create new feedback. Updates directly in database.
             try
             {
                 using (SqlConnection connection = new SqlConnection(connectionString))
@@ -179,6 +184,7 @@ namespace Feedbuff
         }
         public Feedup CreateFeedup(Feedup feedup)
         {
+            //Function to create new feedup. Updates directly in database.
             try
             {
                 using (SqlConnection connection = new SqlConnection(connectionString))
@@ -208,6 +214,7 @@ namespace Feedbuff
         }
         public FeedForward CreateFeedForward(FeedForward feedforward)
         {
+            //Function to create new feedforward. Updates directly in database.
             try
             {
                 using (SqlConnection connection = new SqlConnection(connectionString))
@@ -235,6 +242,7 @@ namespace Feedbuff
         }
         public void UpdateFeedup(Feedup feedup)
         {
+            //Function to change specific feedup data in database.
             try
             {
                 using (SqlConnection connection = new SqlConnection(connectionString))
@@ -262,6 +270,7 @@ namespace Feedbuff
         }
         public void UpdateFeedback(Feedback feedback)
         {
+            //Function to change specific feedback data in database.
             try
             {
                 using (SqlConnection connection = new SqlConnection(connectionString))
@@ -286,6 +295,7 @@ namespace Feedbuff
         }
         public void UpdateFeedforward(FeedForward feedforward)
         {
+            //Function to change specific feedforward data in database.
             try
             {
                 using (SqlConnection connection = new SqlConnection(connectionString))
@@ -310,6 +320,7 @@ namespace Feedbuff
         }
         public void DeleteFeedback(Feedback feedback)
         {
+            //Function to delete specific feedback data in database.
             feedbacks.Clear();
             using (SqlConnection cnn = new SqlConnection(connectionString))
             {
@@ -326,6 +337,7 @@ namespace Feedbuff
         }
         public void DeleteFeedup(Feedup feedup)
         {
+            //Function to delete specific feedup data in database.
             feedbacks.Clear();
             using (SqlConnection cnn = new SqlConnection(connectionString))
             {
@@ -342,6 +354,7 @@ namespace Feedbuff
         }
         public void DeleteFeedforward(FeedForward feedforward)
         {
+            //Function to delete specific feedforward data in database.
             feedForwards.Clear();
             using (SqlConnection cnn = new SqlConnection(connectionString))
             {
